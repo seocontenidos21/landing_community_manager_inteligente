@@ -29,13 +29,14 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+/* Mayor especificidad para sobrescribir Tailwind sin !important */
+html body {
     font-family: var(--font-body);
     color: var(--text-body);
     background-color: #FFFFFF;
     line-height: 1.6;
-    font-size: 105%;
-    /* Aumentado 5% */
+    font-size: 17px;
+    /* Tamaño base aumentado (normal es ~16px) */
 }
 
 /* TIPOGRAFÍA DE MARCA */
@@ -50,30 +51,39 @@ h6,
     color: var(--text-dark);
 }
 
-/* Aumentar tamaños de títulos 15% */
-h1 {
-    font-size: 115%;
+/* Tamaños de títulos - Mayor especificidad para sobrescribir Tailwind */
+html body h1 {
+    font-size: 3.5rem;
 }
 
-h2 {
-    font-size: 115%;
+/* ~56px */
+html body h2 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    /* Reducido para títulos multilínea */
 }
 
-h3 {
-    font-size: 115%;
+/* ~45px */
+html body h3 {
+    font-size: 1.75rem;
 }
 
-h4 {
-    font-size: 115%;
+/* ~28px */
+html body h4 {
+    font-size: 1.5rem;
 }
 
-h5 {
-    font-size: 115%;
+/* ~24px */
+html body h5 {
+    font-size: 1.25rem;
 }
 
-h6 {
-    font-size: 115%;
+/* ~20px */
+html body h6 {
+    font-size: 1.1rem;
 }
+
+/* ~18px */
 
 /* CLASES DE UTILIDAD PERSONALIZADAS */
 
