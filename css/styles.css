@@ -34,6 +34,8 @@ body {
     color: var(--text-body);
     background-color: #FFFFFF;
     line-height: 1.6;
+    font-size: 105%;
+    /* Aumentado 5% */
 }
 
 /* TIPOGRAFÍA DE MARCA */
@@ -46,6 +48,31 @@ h6,
 .font-brand {
     font-family: var(--font-brand);
     color: var(--text-dark);
+}
+
+/* Aumentar tamaños de títulos 15% */
+h1 {
+    font-size: 115%;
+}
+
+h2 {
+    font-size: 115%;
+}
+
+h3 {
+    font-size: 115%;
+}
+
+h4 {
+    font-size: 115%;
+}
+
+h5 {
+    font-size: 115%;
+}
+
+h6 {
+    font-size: 115%;
 }
 
 /* CLASES DE UTILIDAD PERSONALIZADAS */
