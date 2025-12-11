@@ -5,19 +5,30 @@
 :root {
     --font-brand: 'Montserrat', sans-serif;
     --font-body: 'Inter', sans-serif;
-    
+
     /* Paleta extraída de las imágenes */
-    --color-primary: #2563EB;     /* Azul Intenso */
-    --color-secondary: #7C3AED;   /* Violeta */
-    --color-accent: #EF4444;      /* Rojo Acento */
-    
-    --bg-light: #F8FAFC;          /* Fondo muy claro */
-    --text-dark: #0F172A;         /* Casi negro para títulos */
-    --text-body: #334155;         /* Gris oscuro para lectura */
+    --color-primary: #0693e3;
+    /* Azul Marca */
+    --color-secondary: #7c71a5;
+    /* Morado */
+    --color-accent: #f45b51;
+    /* Rosado/Rojo */
+    --color-brand-green: #22c55e;
+    /* Verde Marca */
+
+    --bg-light: #F8FAFC;
+    /* Fondo muy claro */
+    --text-dark: #7e7e7e;
+    /* Gris para títulos (Extraído de la web) */
+    --text-body: #334155;
+    /* Gris oscuro para lectura */
 }
 
 /* RESET Y BASES */
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-body);
     color: var(--text-body);
@@ -26,7 +37,13 @@ body {
 }
 
 /* TIPOGRAFÍA DE MARCA */
-h1, h2, h3, h4, h5, h6, .font-brand {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-brand {
     font-family: var(--font-brand);
     color: var(--text-dark);
 }
@@ -41,18 +58,64 @@ h1, h2, h3, h4, h5, h6, .font-brand {
     background-clip: text;
 }
 
+.text-gradient-green {
+    background: linear-gradient(135deg, var(--color-brand-green) 0%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-gradient-red {
+    background: linear-gradient(135deg, var(--color-accent) 0%, #ef4444 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Botones Estilo SEO Contenidos */
 /* Botones Estilo SEO Contenidos */
 .btn-primary {
-    background: linear-gradient(90deg, var(--color-primary) 0%, #1d4ed8 100%);
-    color: white;
+    position: relative;
+    background: transparent;
+    border: 2px solid #7e7e7e;
+    color: #7e7e7e;
     font-family: var(--font-brand);
-    font-weight: 700;
+    font-weight: 900;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-clip: padding-box;
+    /* Ensures bg doesn't bleed weirdly */
 }
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    /* Covers the border area */
+    background: linear-gradient(to right, #0693e3, #7c71a5, #f45b51);
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    border-radius: 9999px;
+    /* Ensures it matches the pill shape perfectly */
+}
+
 .btn-primary:hover {
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 15px rgba(6, 147, 227, 0.35);
+    /* Glow azulado */
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.23);
+}
+
+.btn-primary:hover::before {
+    opacity: 1;
 }
 
 /* Cards limpias con hover suave */
@@ -61,9 +124,14 @@ h1, h2, h3, h4, h5, h6, .font-brand {
     border: 1px solid #E2E8F0;
     border-radius: 1rem;
     transition: all 0.3s ease;
+    /* Prepare for background-clip trick if needed, or just standard */
 }
+
 .card-clean:hover {
-    border-color: var(--color-primary);
+    border: 1px solid transparent;
+    background-image: linear-gradient(white, white), linear-gradient(to right, #0693e3, #7c71a5, #f45b51);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
     transform: translateY(-3px);
 }
@@ -73,12 +141,164 @@ details summary {
     list-style: none;
     cursor: pointer;
 }
-details summary::-webkit-details-marker { display: none; }
-details[open] summary ~ * {
-    animation: fadeIn 0.3s ease-in-out;
+
+details summary::-webkit-details-marker {
+    display: none;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Accordion Animation */
+details[open] summary~* {
+    animation: details-show 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes details-show {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Blue Accordion Theme */
+.details-blue {
+    transition: all 0.3s ease;
+}
+
+.text-gradient-blue {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #3b82f6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-gradient-yellow {
+    background: linear-gradient(135deg, #fcb900 0%, #fbbf24 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-brand-yellow {
+    color: #fcb900;
+}
+
+/* Accordion Animation Wrapper */
+.accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-content.open {
+    grid-template-rows: 1fr;
+}
+
+.accordion-inner {
+    overflow: hidden;
+}
+
+.details-blue[open] {
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 40px -10px rgba(6, 147, 227, 0.15);
+}
+
+.details-blue summary {
+    transition: background-color 0.2s, border-color 0.2s;
+    border-bottom: 1px solid transparent;
+}
+
+.details-blue summary:hover {
+    background-color: #F8FAFC;
+}
+
+.details-blue[open] summary {
+    background-color: #F0F9FF;
+    /* Light Blue 50 */
+    color: var(--color-primary);
+    border-bottom: 1px solid #F1F5F9;
+}
+
+
+/* Helper class for icon boxes inside summary if needed to change color */
+/* Helper class for icon boxes inside summary if needed to change color */
+.details-blue[open] summary .icon-box {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* Red Accordion Theme */
+.details-red {
+    transition: all 0.3s ease;
+}
+
+.details-red summary {
+    transition: background-color 0.2s, border-color 0.2s;
+    border-bottom: 1px solid transparent;
+}
+
+.details-red summary:hover {
+    background-color: #FEF2F2;
+    /* Red 50 */
+}
+
+.details-red[open] {
+    border-color: var(--color-accent);
+    /* Brand Red */
+    box-shadow: 0 10px 40px -10px rgba(244, 91, 81, 0.15);
+}
+
+.details-red[open] summary {
+    background-color: #FEF2F2;
+    color: var(--color-accent);
+    border-bottom: 1px solid #FEE2E2;
+    /* Red 100 */
+}
+
+.details-red[open] summary .icon-box {
+    background-color: var(--color-accent);
+    color: white;
+}
+
+/* Green Utilities */
+.text-gradient-green {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+/* Card Hover Green */
+.card-hover-green {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.card-hover-green:hover {
+    border-color: #22c55e;
+    box-shadow: 0 10px 40px -10px rgba(34, 197, 94, 0.15);
+    transform: translateY(-5px);
+}
+
+/* Card Hover Red/Blue (Generic Pattern) */
+.card-hover-red {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.card-hover-red:hover {
+    border-color: #f45b51;
+    box-shadow: 0 10px 40px -10px rgba(244, 91, 81, 0.15);
+}
+
+.text-brand-blue {
+    color: var(--color-primary);
+}
+
+.text-brand-red {
+    color: var(--color-accent);
 }
