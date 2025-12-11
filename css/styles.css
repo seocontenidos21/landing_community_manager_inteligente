@@ -1,0 +1,84 @@
+/* FUENTES: Importamos Montserrat (Marca) e Inter (Lectura) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800;900&display=swap');
+
+/* VARIABLES DE MARCA - SEO CONTENIDOS */
+:root {
+    --font-brand: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Paleta extraída de las imágenes */
+    --color-primary: #2563EB;     /* Azul Intenso */
+    --color-secondary: #7C3AED;   /* Violeta */
+    --color-accent: #EF4444;      /* Rojo Acento */
+    
+    --bg-light: #F8FAFC;          /* Fondo muy claro */
+    --text-dark: #0F172A;         /* Casi negro para títulos */
+    --text-body: #334155;         /* Gris oscuro para lectura */
+}
+
+/* RESET Y BASES */
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-body);
+    color: var(--text-body);
+    background-color: #FFFFFF;
+    line-height: 1.6;
+}
+
+/* TIPOGRAFÍA DE MARCA */
+h1, h2, h3, h4, h5, h6, .font-brand {
+    font-family: var(--font-brand);
+    color: var(--text-dark);
+}
+
+/* CLASES DE UTILIDAD PERSONALIZADAS */
+
+/* Gradiente de Texto (El efecto "IA" de tu logo) */
+.text-gradient-brand {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Botones Estilo SEO Contenidos */
+.btn-primary {
+    background: linear-gradient(90deg, var(--color-primary) 0%, #1d4ed8 100%);
+    color: white;
+    font-family: var(--font-brand);
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.23);
+}
+
+/* Cards limpias con hover suave */
+.card-clean {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+.card-clean:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+}
+
+/* Acordeón (Módulos) */
+details summary {
+    list-style: none;
+    cursor: pointer;
+}
+details summary::-webkit-details-marker { display: none; }
+details[open] summary ~ * {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
