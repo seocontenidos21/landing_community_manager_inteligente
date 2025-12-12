@@ -10,8 +10,8 @@
     <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
-
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -19,18 +19,42 @@
 
     <nav id="main-nav"
         class="bg-white fixed w-full top-0 z-50 border-b border-slate-100 transition-all duration-300 py-4">
-        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-            <div class="hidden md:flex flex-1"></div>
+        <div class="max-w-6xl mx-auto px-6 relative flex items-center justify-between">
+            <!-- Logo a la izquierda -->
+            <div class="flex items-center">
+                <a href="#" class="group flex items-center">
+                    <img src="img/seo-logo-02-1.webp" alt="Logo SEO Contenidos"
+                        class="h-10 md:h-12 object-contain group-hover:scale-105 transition-transform">
+                </a>
+            </div>
 
-            <a href="#" class="group">
-                <img src="img/seo-logo-02-1.webp" alt="Logo SEO Contenidos"
-                    class="h-10 md:h-12 object-contain group-hover:scale-105 transition-transform">
-            </a>
+            <!-- Texto centrado (oculto en móvil para evitar solapamientos) -->
+            <div class="flex-1 hidden md:flex items-center justify-center">
+                <div id="cronometro" role="timer" aria-live="polite" class="flex items-center gap-3 bg-blue-50 px-3 py-1 rounded-full border border-blue-100 shadow-sm text-sm font-medium">
+                    <span class="hidden md:inline-block text-xs uppercase font-bold tracking-wide text-blue-700 bg-white/60 px-2 py-0.5 rounded-full">Oferta limitada 24 horas</span>
+                    <div class="flex flex-col items-center px-2">
+                        <div id="horas" class="text-blue-700 font-bold text-lg tabular-nums font-mono min-w-[40px] text-center">00</div>
+                        <div class="text-xs text-blue-600">Horas</div>
+                    </div>
+                    <div class="text-slate-400">:</div>
+                    <div class="flex flex-col items-center px-2">
+                        <div id="minutos" class="text-blue-700 font-bold text-lg tabular-nums font-mono min-w-[40px] text-center">00</div>
+                        <div class="text-xs text-blue-600">Min</div>
+                    </div>
+                    <div class="text-slate-400">:</div>
+                    <div class="flex flex-col items-center px-2">
+                        <div id="segundos" class="text-blue-700 font-bold text-lg tabular-nums font-mono min-w-[40px] text-center">00</div>
+                        <div class="text-xs text-blue-600">Seg</div>
+                    </div>
+                </div>
+            </div>
+            <script src="./js/cronometro.js"></script>
 
-            <div class="flex-1 flex justify-end">
+            <!-- Botón a la derecha -->
+            <div class="flex items-center">
                 <a href="#oferta"
                     class="btn-primary px-4 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-bold shadow-lg">
-                    Inscribirme Ahora
+                    Inscribirme
                 </a>
             </div>
         </div>
@@ -45,10 +69,10 @@
         </div>
 
         <div class="max-w-5xl mx-auto text-center relative z-10">
-            <span
+            <!-- <span
                 class="inline-block py-1.5 px-4 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold tracking-wide mb-8 uppercase font-brand">
                 <i class="fa-solid fa-certificate mr-2"></i> Certificación Profesional
-            </span>
+            </span> -->
 
             <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight">
                 Community Manager <br />
@@ -57,8 +81,8 @@
 
             <div class="w-full max-w-4xl mx-auto mb-10 shadow-2xl rounded-2xl overflow-hidden border border-slate-200">
                 <div class="aspect-video bg-slate-900 relative">
-                    <video class="w-full h-full object-cover" controls preload="metadata">
-                        <source src="https://seocontenidos-recursos.b-cdn.net/videoplayback.mp4#t=83" type="video/mp4">
+                    <video class="w-full h-full object-cover" preload="metadata" autoplay muted loop>
+                        <source src="https://seocontenidos-recursos.b-cdn.net/home_logo_1080p.mp4" type="video/mp4">
                         Tu navegador no soporta la reproducción de videos HTML5.
                     </video>
                 </div>
@@ -73,15 +97,15 @@
             <div
                 class="flex flex-col md:flex-row justify-center gap-4 mb-12 text-sm md:text-base font-medium text-slate-700">
                 <div
-                    class="flex items-center justify-center gap-2 bg-white px-5 py-2 rounded-full border border-slate-200 shadow-sm">
+                    class="feature-chip flex items-center justify-center gap-2 bg-white px-5 py-2 rounded-full border border-slate-200 shadow-sm">
                     <i class="fa-solid fa-check text-blue-600"></i> +11 Años de Experiencia
                 </div>
                 <div
-                    class="flex items-center justify-center gap-2 bg-white px-5 py-2 rounded-full border border-slate-200 shadow-sm">
+                    class="feature-chip flex items-center justify-center gap-2 bg-white px-5 py-2 rounded-full border border-slate-200 shadow-sm">
                     <i class="fa-solid fa-check text-blue-600"></i> Certificado Incluido
                 </div>
                 <div
-                    class="flex items-center justify-center gap-2 bg-white px-5 py-2 rounded-full border border-slate-200 shadow-sm">
+                    class="feature-chip flex items-center justify-center gap-2 bg-white px-5 py-2 rounded-full border border-slate-200 shadow-sm">
                     <i class="fa-solid fa-check text-blue-600"></i> Acceso Vitalicio
                 </div>
             </div>
@@ -786,6 +810,14 @@
             </div>
         </div>
     </footer>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/584247086547" target="_blank" rel="noopener noreferrer"
+            aria-label="Contactar por WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
 
     <script src="js/main.js"></script>
     <script>
