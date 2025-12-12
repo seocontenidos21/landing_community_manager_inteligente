@@ -29,32 +29,38 @@
             </div>
 
             <!-- Texto centrado (oculto en móvil para evitar solapamientos) -->
-            <div class="flex-1 hidden md:flex items-center justify-center">
+            <div class="flex-1 flex items-center justify-center">
                 <a id="cronometro" href="#oferta" role="timer" aria-live="polite"
                 title="Oferta limitada — haz clic para inscribirte"
-                class="group flex items-center gap-3 bg-red-100 px-4 py-2 rounded-full border border-red-200 shadow-sm text-sm font-medium cursor-pointer hover:!bg-red-200 hover:shadow-lg hover:scale-105 transition-all duration-300 focus:outline-none">
+                class="group flex items-center gap-1.5 md:gap-3 bg-white px-2 py-1.5 md:px-4 md:py-2 rounded-full border border-slate-200 shadow-sm cursor-pointer hover:shadow-md hover:border-slate-300 hover:scale-[1.02] transition-all duration-300 focus:outline-none origin-center transform scale-90 md:scale-100">
                     
-                    <span class="hidden md:inline-block text-xs uppercase font-bold tracking-wide text-red-700 border-r border-red-200 pr-3 mr-1 group-hover:border-red-300 transition-colors">
+                    <span class="inline-block md:hidden text-[9px] font-black uppercase tracking-tight text-red-600 border-r border-slate-200 pr-2 mr-1 leading-tight">
+                        Oferta<br>Flash
+                    </span>
+
+                    <span class="hidden md:inline-block text-xs uppercase font-bold tracking-wide text-red-600 border-r border-slate-200 pr-4 mr-1">
                         Oferta limitada 24 horas
                     </span>
 
-                    <div class="flex flex-col items-center px-2">
-                        <div id="horas" class="text-red-700 font-bold text-lg tabular-nums font-mono min-w-[20px] text-center leading-none">00</div>
-                        <div class="text-[10px] text-red-600 uppercase">Horas</div>
-                    </div>
-
-                    <div class="text-red-300 font-bold -mt-3 group-hover:text-red-400 transition-colors">:</div>
-
-                    <div class="flex flex-col items-center px-2">
-                        <div id="minutos" class="text-red-700 font-bold text-lg tabular-nums font-mono min-w-[20px] text-center leading-none">00</div>
-                        <div class="text-[10px] text-red-600 uppercase">Min</div>
-                    </div>
-
-                    <div class="text-red-300 font-bold -mt-3 group-hover:text-red-400 transition-colors">:</div>
-
-                    <div class="flex flex-col items-center px-2">
-                        <div id="segundos" class="text-red-700 font-bold text-lg tabular-nums font-mono min-w-[20px] text-center leading-none">00</div>
-                        <div class="text-[10px] text-red-600 uppercase">Seg</div>
+                    <div class="flex items-center gap-0.5 md:gap-1 text-slate-700">
+                        <div class="flex flex-col items-center">
+                            <span id="horas" class="font-bold text-base md:text-lg tabular-nums font-mono leading-none tracking-tight">00</span>
+                            <span class="text-[8px] md:text-[10px] text-slate-400 uppercase font-medium">Hrs</span>
+                        </div>
+                        
+                        <span class="text-slate-300 font-bold text-sm md:text-base -mt-2 pb-1">:</span>
+                        
+                        <div class="flex flex-col items-center">
+                            <span id="minutos" class="font-bold text-base md:text-lg tabular-nums font-mono leading-none tracking-tight">00</span>
+                            <span class="text-[8px] md:text-[10px] text-slate-400 uppercase font-medium">Min</span>
+                        </div>
+                        
+                        <span class="text-slate-300 font-bold text-sm md:text-base -mt-2 pb-1">:</span>
+                        
+                        <div class="flex flex-col items-center">
+                            <span id="segundos" class="font-bold text-base md:text-lg tabular-nums font-mono leading-none tracking-tight">00</span>
+                            <span class="text-[8px] md:text-[10px] text-slate-400 uppercase font-medium">Seg</span>
+                        </div>
                     </div>
                 </a>
             </div>
