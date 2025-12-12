@@ -413,7 +413,6 @@ details[open] summary~* {
 
 #cronometro:hover,
 #cronometro:active {
-    transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(244, 91, 81, 0.12);
     background-color: #fff5f5;
 }
