@@ -30,23 +30,33 @@
 
             <!-- Texto centrado (oculto en móvil para evitar solapamientos) -->
             <div class="flex-1 hidden md:flex items-center justify-center">
-                <div id="cronometro" role="timer" aria-live="polite" class="flex items-center gap-3 bg-blue-50 px-3 py-1 rounded-full border border-blue-100 shadow-sm text-sm font-medium">
-                    <span class="hidden md:inline-block text-xs uppercase font-bold tracking-wide text-blue-700 bg-white/60 px-2 py-0.5 rounded-full">Oferta limitada 24 horas</span>
+                <a id="cronometro" href="#oferta" role="timer" aria-live="polite"
+                title="Oferta limitada — haz clic para inscribirte"
+                class="group flex items-center gap-3 bg-red-100 px-4 py-2 rounded-full border border-red-200 shadow-sm text-sm font-medium cursor-pointer hover:!bg-red-200 hover:shadow-lg hover:scale-105 transition-all duration-300 focus:outline-none">
+                    
+                    <span class="hidden md:inline-block text-xs uppercase font-bold tracking-wide text-red-700 border-r border-red-200 pr-3 mr-1 group-hover:border-red-300 transition-colors">
+                        Oferta limitada 24 horas
+                    </span>
+
                     <div class="flex flex-col items-center px-2">
-                        <div id="horas" class="text-blue-700 font-bold text-lg tabular-nums font-mono min-w-[40px] text-center">00</div>
-                        <div class="text-xs text-blue-600">Horas</div>
+                        <div id="horas" class="text-red-700 font-bold text-lg tabular-nums font-mono min-w-[20px] text-center leading-none">00</div>
+                        <div class="text-[10px] text-red-600 uppercase">Horas</div>
                     </div>
-                    <div class="text-slate-400">:</div>
+
+                    <div class="text-red-300 font-bold -mt-3 group-hover:text-red-400 transition-colors">:</div>
+
                     <div class="flex flex-col items-center px-2">
-                        <div id="minutos" class="text-blue-700 font-bold text-lg tabular-nums font-mono min-w-[40px] text-center">00</div>
-                        <div class="text-xs text-blue-600">Min</div>
+                        <div id="minutos" class="text-red-700 font-bold text-lg tabular-nums font-mono min-w-[20px] text-center leading-none">00</div>
+                        <div class="text-[10px] text-red-600 uppercase">Min</div>
                     </div>
-                    <div class="text-slate-400">:</div>
+
+                    <div class="text-red-300 font-bold -mt-3 group-hover:text-red-400 transition-colors">:</div>
+
                     <div class="flex flex-col items-center px-2">
-                        <div id="segundos" class="text-blue-700 font-bold text-lg tabular-nums font-mono min-w-[40px] text-center">00</div>
-                        <div class="text-xs text-blue-600">Seg</div>
+                        <div id="segundos" class="text-red-700 font-bold text-lg tabular-nums font-mono min-w-[20px] text-center leading-none">00</div>
+                        <div class="text-[10px] text-red-600 uppercase">Seg</div>
                     </div>
-                </div>
+                </a>
             </div>
             <script src="./js/cronometro.js"></script>
 
