@@ -32,44 +32,34 @@
             <div class="flex-1 flex items-center justify-center">
                 <a id="cronometro" href="#oferta" role="timer" aria-live="polite"
                     title="Oferta limitada — haz clic para inscribirte"
-                    class="group flex items-center gap-1.5 md:gap-5 bg-white px-2 py-0.5 md:px-6 md:py-1 rounded-full border border-slate-300 shadow-md cursor-pointer hover:shadow-lg hover:border-slate-400 hover:scale-[1.02] transition-all duration-300 focus:outline-none origin-center transform scale-100">
+                    class="crono-contenedor group flex items-center gap-1.5 md:gap-5 bg-white px-2 py-0.5 md:px-6 md:py-1 rounded-full border border-slate-300 shadow-md cursor-pointer hover:shadow-lg hover:border-slate-400 hover:scale-[1.02] transition-all duration-300 focus:outline-none origin-center transform scale-100">
 
-                    <span
-                        class="inline-block md:hidden text-[9px] font-black uppercase tracking-tighter text-red-600 border-r border-slate-200 pr-1.5 mr-0.5 leading-none text-right">
+                    <span class="inline-block md:hidden text-[9px] font-black uppercase tracking-tighter text-red-600 border-r border-slate-200 pr-1.5 mr-0.5 leading-none text-right">
                         Oferta<br>Flash
                     </span>
 
-                    <span
-                        class="hidden md:inline-block text-base md:text-lg uppercase font-black tracking-tight text-red-600 border-r-2 border-slate-200 pr-5 mr-1 leading-none pt-0.5">
+                    <span class="hidden md:inline-block text-base md:text-lg uppercase font-black tracking-tight text-red-600 border-r-2 border-slate-200 pr-5 mr-1 leading-none pt-0.5">
                         Oferta limitada 24 horas
                     </span>
 
                     <div class="flex items-center gap-0.5 md:gap-2 text-slate-800">
                         <div class="flex flex-col items-center justify-center">
-                            <span id="horas"
-                                class="font-black text-lg md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
-                            <span
-                                class="text-[7px] md:text-[9px] text-slate-500 uppercase font-bold tracking-wider leading-none mt-[1px]">Hrs</span>
+                            <span id="horas" class="crono-horas font-black text-lg md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
+                            <span class="text-[7px] md:text-[9px] text-slate-500 uppercase font-bold tracking-wider leading-none mt-[1px]">Hrs</span>
                         </div>
 
-                        <span
-                            class="text-slate-300 font-black text-base md:text-2xl pb-1 leading-none self-start mt-0.5 opacity-60">:</span>
+                        <span class="text-slate-300 font-black text-base md:text-2xl pb-1 leading-none self-start mt-0.5 opacity-60">:</span>
 
                         <div class="flex flex-col items-center justify-center">
-                            <span id="minutos"
-                                class="font-black text-lg md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
-                            <span
-                                class="text-[7px] md:text-[9px] text-slate-500 uppercase font-bold tracking-wider leading-none mt-[1px]">Min</span>
+                            <span id="minutos" class="crono-minutos font-black text-lg md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
+                            <span class="text-[7px] md:text-[9px] text-slate-500 uppercase font-bold tracking-wider leading-none mt-[1px]">Min</span>
                         </div>
 
-                        <span
-                            class="text-slate-300 font-black text-base md:text-2xl pb-1 leading-none self-start mt-0.5 opacity-60">:</span>
+                        <span class="text-slate-300 font-black text-base md:text-2xl pb-1 leading-none self-start mt-0.5 opacity-60">:</span>
 
                         <div class="flex flex-col items-center justify-center">
-                            <span id="segundos"
-                                class="font-black text-lg md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
-                            <span
-                                class="text-[7px] md:text-[9px] text-slate-500 uppercase font-bold tracking-wider leading-none mt-[1px]">Seg</span>
+                            <span id="segundos" class="crono-segundos font-black text-lg md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
+                            <span class="text-[7px] md:text-[9px] text-slate-500 uppercase font-bold tracking-wider leading-none mt-[1px]">Seg</span>
                         </div>
                     </div>
                 </a>
@@ -901,72 +891,159 @@
         </div>
     </section>
 
-    <section id="oferta" class="py-24 px-6 bg-white bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
+    <section id="oferta" class="py-24 px-6 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-fixed bg-slate-50">
         <div class="max-w-4xl mx-auto">
+            
             <div class="bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden relative">
-                <div
-                    class="absolute top-0 right-0 bg-yellow-500 text-white px-8 py-2 rounded-bl-2xl font-bold text-sm shadow-md">
-                    OFERTA ESPECIAL
-                </div>
-
-                <div class="p-10 md:p-12 text-center bg-slate-50 border-b border-slate-100">
-                    <h2 class="font-black mb-2"><span class="text-gradient-yellow">Acceso
-                            Total</span> al
-                        Curso</h2>
-                    <p class="text-slate-500 font-medium">Comienza hoy mismo a tu propio ritmo</p>
+                
+                <div class="bg-slate-900 p-8 md:p-10 text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600 rounded-full mix-blend-overlay filter blur-[80px] opacity-20"></div>
+                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-violet-600 rounded-full mix-blend-overlay filter blur-[80px] opacity-20"></div>
+                    
+                    <h2 class="font-black text-2xl md:text-3xl text-white mb-6 uppercase tracking-tight relative z-10">
+                        Todo Lo Que Incluye Tu Inversión de <span class="text-blue-400">$47 USD</span>
+                    </h2>
+                    
+                    <div class="flex flex-wrap justify-center gap-3 relative z-10">
+                        <div class="bg-white/10 backdrop-blur-sm border border-white/10 rounded-lg px-4 py-2 text-slate-300 text-xs md:text-sm font-bold">
+                            Valor real: <span class="line-through text-slate-400">$847 USD</span>
+                        </div>
+                        <div class="bg-white text-slate-900 rounded-lg px-4 py-2 text-xs md:text-sm font-black shadow-lg">
+                            Inversión: $47 USD
+                        </div>
+                        <div class="bg-green-500 text-white rounded-lg px-4 py-2 text-xs md:text-sm font-bold shadow-lg animate-pulse">
+                            AHORRAS: $800 USD
+                        </div>
+                    </div>
                 </div>
 
                 <div class="p-8 md:p-12">
-                    <div class="space-y-4 mb-10 max-w-lg mx-auto">
-                        <div class="flex items-center justify-between border-b border-slate-50 pb-3">
-                            <span class="flex items-center gap-3 text-slate-700 font-medium"><i
-                                    class="fa-solid fa-circle-check text-green-500"></i> Curso Completo Grabado (+6
-                                hrs)</span>
-                            <span class="text-slate-400 text-sm font-bold line-through">$49</span>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex justify-between items-center border-b border-slate-50 pb-3">
+                            <span class="flex items-start md:items-center gap-3 font-bold text-slate-700 text-sm md:text-base">
+                                <i class="fa-solid fa-circle-check text-green-500 text-lg mt-0.5 md:mt-0"></i> 
+                                Curso Completo (11 módulos • 5.5 horas)
+                            </span>
+                            <span class="font-bold text-slate-400 text-sm md:text-base line-through">$297</span>
                         </div>
-                        <div class="flex items-center justify-between border-b border-slate-50 pb-3">
-                            <span class="flex items-center gap-3 text-slate-700 font-medium"><i
-                                    class="fa-solid fa-circle-check text-green-500"></i> Certificado de
-                                Finalización</span>
-                            <span class="text-slate-400 text-sm font-bold line-through">$24</span>
+                        <div class="flex justify-between items-center border-b border-slate-50 pb-3">
+                            <span class="flex items-start md:items-center gap-3 font-bold text-slate-700 text-sm md:text-base">
+                                <i class="fa-solid fa-circle-check text-green-500 text-lg mt-0.5 md:mt-0"></i> 
+                                Certificado Profesional Avalado
+                            </span>
+                            <span class="font-bold text-slate-400 text-sm md:text-base line-through">$97</span>
                         </div>
-                        <div class="flex items-center justify-between border-b border-slate-50 pb-3">
-                            <span class="flex items-center gap-3 text-slate-700 font-medium"><i
-                                    class="fa-solid fa-circle-check text-green-500"></i> Plantillas y Recursos
-                                Descargables</span>
-                            <span class="text-slate-400 text-sm font-bold line-through">$13</span>
+                        <div class="flex justify-between items-center border-b border-slate-50 pb-3">
+                            <span class="flex items-start md:items-center gap-3 font-bold text-slate-700 text-sm md:text-base">
+                                <i class="fa-solid fa-circle-check text-green-500 text-lg mt-0.5 md:mt-0"></i> 
+                                Acceso Vitalicio Sin Renovaciones
+                            </span>
+                            <span class="font-bold text-slate-400 text-sm md:text-base line-through">$147</span>
                         </div>
-                        <div class="flex items-center justify-between border-b border-slate-50 pb-3">
-                            <span class="flex items-center gap-3 text-slate-700 font-medium"><i
-                                    class="fa-solid fa-circle-check text-green-500"></i> Acceso de por Vida y
-                                Actualizaciones</span>
-                            <span class="text-slate-400 text-sm font-bold line-through">$13</span>
-                        </div>
-                        <div class="flex items-center justify-between pt-2">
-                            <span class="font-bold text-xl">Valor Total Real</span>
-                            <span class="font-bold text-xl line-through">$99 USD</span>
+                        <div class="flex justify-between items-center border-b border-slate-50 pb-3">
+                            <span class="flex items-start md:items-center gap-3 font-bold text-slate-700 text-sm md:text-base">
+                                <i class="fa-solid fa-circle-check text-green-500 text-lg mt-0.5 md:mt-0"></i> 
+                                Material Descargable (PDFs + Plantillas)
+                            </span>
+                            <span class="font-bold text-slate-400 text-sm md:text-base line-through">$47</span>
                         </div>
                     </div>
 
-                    <div class="text-center bg-blue-50 p-8 rounded-2xl mb-8 border border-blue-100">
-                        <p class="text-blue-800 font-bold mb-2 uppercase text-sm tracking-wider">Precio Hoy - Pago Único
+                    <div class="bg-slate-50 rounded-2xl p-6 md:p-8 mb-10 border border-slate-100 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider shadow-sm">Regalo</div>
+                        
+                        <h3 class="font-black text-slate-700 uppercase mb-5 flex items-center gap-2 text-sm md:text-base">
+                            <i class="fa-solid fa-gift text-blue-500"></i> Bonos Incluidos:
+                        </h3>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="flex items-center gap-2 font-medium text-slate-600 text-xs md:text-sm"><i class="fa-solid fa-check text-blue-400"></i> Plantilla de Propuesta Comercial</span>
+                                <span class="font-bold text-slate-300 text-xs md:text-sm line-through">$67</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="flex items-center gap-2 font-medium text-slate-600 text-xs md:text-sm"><i class="fa-solid fa-check text-blue-400"></i> Calculadora de Precios</span>
+                                <span class="font-bold text-slate-300 text-xs md:text-sm line-through">$47</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="flex items-center gap-2 font-medium text-slate-600 text-xs md:text-sm"><i class="fa-solid fa-check text-blue-400"></i> Modelo de Contrato Profesional</span>
+                                <span class="font-bold text-slate-300 text-xs md:text-sm line-through">$97</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="flex items-center gap-2 font-medium text-slate-600 text-xs md:text-sm"><i class="fa-solid fa-check text-blue-400"></i> Script de Llamada de Venta</span>
+                                <span class="font-bold text-slate-300 text-xs md:text-sm line-through">$47</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-3 border-t border-slate-200 mt-3">
+                                <span class="flex items-center gap-2 font-bold text-slate-800 text-sm"><i class="fa-solid fa-star text-yellow-400"></i> Prompts Probados de IA</span>
+                                <span class="font-black text-green-600 text-xs uppercase bg-green-100 px-2 py-0.5 rounded border border-green-200">Incluido</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mb-8">
+                        <p class="text-slate-400 font-bold uppercase tracking-widest text-xs md:text-sm mb-2">Valor Total: <span class="line-through decoration-red-400 decoration-2">$847 USD</span></p>
+                        <div class="text-6xl md:text-8xl font-black text-slate-900 tracking-tighter mb-2 flex justify-center items-start gap-2">
+                            $47 <span class="text-xl md:text-2xl text-slate-500 font-bold tracking-normal mt-2 md:mt-4">USD</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-red-50 border border-red-100 rounded-xl p-5 text-center mb-8 max-w-md mx-auto">
+                        <p class="text-red-500 font-bold uppercase text-xs mb-3 tracking-widest flex items-center justify-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Oferta expira en:
                         </p>
-                        <div class="text-6xl font-black text-blue-600 mb-2 tracking-tight">$47 <span
-                                class="text-2xl text-slate-500 font-medium">USD</span></div>
+                        
+                        <div class="flex justify-center gap-3 md:gap-5 font-mono font-black text-2xl md:text-3xl text-slate-800 mb-3">
+                            <div class="bg-white px-3 py-2 rounded shadow-sm border border-red-100">
+                                <span class="crono-horas">00</span><span class="text-[9px] block text-slate-400 font-sans tracking-widest font-bold">HRS</span>
+                            </div>
+                            <span class="self-center pb-4 text-red-200">:</span>
+                            <div class="bg-white px-3 py-2 rounded shadow-sm border border-red-100">
+                                <span class="crono-minutos">00</span><span class="text-[9px] block text-slate-400 font-sans tracking-widest font-bold">MIN</span>
+                            </div>
+                            <span class="self-center pb-4 text-red-200">:</span>
+                            <div class="bg-white px-3 py-2 rounded shadow-sm border border-red-100">
+                                <span class="crono-segundos">00</span><span class="text-[9px] block text-slate-400 font-sans tracking-widest font-bold">SEG</span>
+                            </div>
+                        </div>
+
+                        <p class="text-slate-500 text-xs font-medium leading-relaxed">
+                            Precio especial de lanzamiento LATAM.<br>
+                            <span class="text-slate-800 font-bold">Después de 500 plazas: $99 USD.</span>
+                        </p>
                     </div>
 
-                    <button
-                        class="w-full btn-primary py-5 px-8 rounded-full shadow-xl transform hover:-translate-y-1 transition duration-200 text-xl flex justify-center items-center gap-3 font-black">
-                        <span>OBTENER ACCESO AHORA</span>
-                        <i class="fa-solid fa-lock"></i>
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-4 bg-white p-4 rounded-xl border border-slate-100 mb-10 text-center md:text-left shadow-sm">
+                        <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 text-xl flex-shrink-0">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 uppercase text-sm mb-0.5">GARANTÍA 7 DÍAS SIN RIESGO</h4>
+                            <p class="text-slate-500 text-xs leading-snug">No te convence en 7 días = devolución 100%.<br>Sin preguntas. Sin complicaciones.</p>
+                        </div>
+                    </div>
+
+                    <button class="w-full btn-primary py-5 md:py-6 text-xl md:text-2xl rounded-full shadow-2xl hover:shadow-blue-200/50 hover:scale-[1.01] transition-all flex flex-col items-center justify-center gap-1 group bg-white text-slate-700">
+                        <span class="font-black tracking-tight group-hover:text-white transition-colors">SÍ, QUIERO ACCEDER POR $47 USD</span>
+                        <span class="text-xs md:text-sm font-bold opacity-70 font-sans normal-case group-hover:text-white transition-colors">→ Acceso inmediato • Garantía 7 días</span>
                     </button>
 
-                    <div class="text-center mt-6 text-xs text-slate-400 flex justify-center items-center gap-6">
-                        <span><i class="fa-solid fa-shield-halved"></i> Pago 100% Seguro</span>
-                        <span><i class="fa-solid fa-bolt"></i> Acceso Inmediato</span>
+                    <div class="mt-10 text-center">
+                        <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-4">
+                            <span class="px-3 py-1 bg-slate-50 border border-slate-100 rounded text-xs font-bold text-slate-500 select-none">Zelle</span>
+                            <span class="px-3 py-1 bg-slate-50 border border-slate-100 rounded text-xs font-bold text-slate-500 select-none">PayPal</span>
+                            <span class="px-3 py-1 bg-slate-50 border border-slate-100 rounded text-xs font-bold text-slate-500 select-none">Binance</span>
+                            <span class="px-3 py-1 bg-slate-50 border border-slate-100 rounded text-xs font-bold text-slate-500 select-none">Zinli</span>
+                            <span class="px-3 py-1 bg-slate-50 border border-slate-100 rounded text-xs font-bold text-slate-500 select-none">Pagomóvil</span>
+                        </div>
+                        <div class="text-xs text-slate-400 flex justify-center items-center gap-2 font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-lock text-green-500"></i> Pago 100% Seguro SSL
+                        </div>
                     </div>
+
                 </div>
             </div>
+
         </div>
     </section>
 
