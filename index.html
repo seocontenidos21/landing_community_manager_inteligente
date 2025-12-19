@@ -20,53 +20,52 @@
     <nav id="main-nav"
         class="bg-white fixed w-full top-0 z-50 border-b border-slate-100 transition-all duration-300 py-4">
         <div class="max-w-6xl mx-auto px-6 relative flex items-center justify-between">
-            <!-- Logo a la izquierda -->
-            <div class="flex items-center">
+            
+            <div class="hidden md:flex items-center">
                 <a href="#" class="group flex items-center">
                     <img src="img/seo-logo-02-1.webp" alt="Logo SEO Contenidos"
                         class="h-10 md:h-12 object-contain group-hover:scale-105 transition-transform">
                 </a>
             </div>
 
-            <!-- Texto centrado (oculto en móvil para evitar solapamientos) -->
-            <div class="flex-1 flex items-center justify-center">
+            <div class="flex-1 flex items-center justify-start md:justify-center">
+                
                 <a id="cronometro" href="#oferta" role="timer" aria-live="polite"
                     title="Oferta limitada — haz clic para inscribirte"
-                    class="crono-contenedor group flex items-center gap-1.5 md:gap-5 bg-white px-2 py-0.5 md:px-6 md:py-1 rounded-full border border-slate-300 shadow-md cursor-pointer hover:shadow-lg hover:border-slate-400 hover:scale-[1.02] transition-all duration-300 focus:outline-none origin-center transform scale-100">
+                    class="crono-contenedor group flex flex-col md:flex-row items-start md:items-center gap-0.5 md:gap-5 bg-white px-0 py-0 md:px-6 md:py-1 rounded-none md:rounded-full border-none md:border md:border-slate-300 md:shadow-md cursor-pointer md:hover:shadow-lg md:hover:border-slate-400 md:hover:scale-[1.02] transition-all duration-300 focus:outline-none origin-center transform scale-100">
 
-                    <span class="inline-block md:hidden text-[9px] font-black uppercase tracking-tighter text-red-600 border-r border-slate-200 pr-1.5 mr-0.5 leading-none text-right">
-                        Oferta<br>Flash
+                    <span class="inline-block md:hidden text-[10px] font-black uppercase tracking-tighter text-red-600 mb-0 leading-none text-left pl-0.5">
+                        Oferta Flash
                     </span>
 
                     <span class="hidden md:inline-block text-base md:text-lg uppercase font-black tracking-tight text-red-600 border-r-2 border-slate-200 pr-5 mr-1 leading-none pt-0.5">
                         Oferta limitada 24 horas
                     </span>
 
-                    <div class="flex items-center gap-0.5 md:gap-2 text-slate-800">
-                        <div class="flex flex-col items-center justify-center">
+                    <div class="flex items-center gap-1 md:gap-2 text-slate-800">
+                        <div class="flex flex-row items-baseline justify-center gap-0.5">
                             <span id="horas" class="crono-horas font-black text-lg md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
-                            <span class="text-[7px] md:text-[9px] text-slate-500 uppercase font-bold tracking-wider leading-none mt-[1px]">Hrs</span>
+                            <span class="text-[9px] text-slate-500 uppercase font-bold tracking-wider leading-none">Hrs</span>
                         </div>
 
-                        <span class="text-slate-300 font-black text-base md:text-2xl pb-1 leading-none self-start mt-0.5 opacity-60">:</span>
+                        <span class="text-slate-300 font-black text-sm md:text-2xl leading-none opacity-60 relative -top-[1px]">:</span>
 
-                        <div class="flex flex-col items-center justify-center">
+                        <div class="flex flex-row items-baseline justify-center gap-0.5">
                             <span id="minutos" class="crono-minutos font-black text-lg md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
-                            <span class="text-[7px] md:text-[9px] text-slate-500 uppercase font-bold tracking-wider leading-none mt-[1px]">Min</span>
+                            <span class="text-[9px] text-slate-500 uppercase font-bold tracking-wider leading-none">Min</span>
                         </div>
 
-                        <span class="text-slate-300 font-black text-base md:text-2xl pb-1 leading-none self-start mt-0.5 opacity-60">:</span>
+                        <span class="text-slate-300 font-black text-sm md:text-2xl leading-none opacity-60 relative -top-[1px]">:</span>
 
-                        <div class="flex flex-col items-center justify-center">
+                        <div class="flex flex-row items-baseline justify-center gap-0.5">
                             <span id="segundos" class="crono-segundos font-black text-lg md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
-                            <span class="text-[7px] md:text-[9px] text-slate-500 uppercase font-bold tracking-wider leading-none mt-[1px]">Seg</span>
+                            <span class="text-[9px] text-slate-500 uppercase font-bold tracking-wider leading-none">Seg</span>
                         </div>
                     </div>
                 </a>
             </div>
             <script src="./js/cronometro.js"></script>
 
-            <!-- Botón a la derecha -->
             <div class="flex items-center">
                 <a href="#oferta"
                     class="btn-primary px-4 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-bold shadow-lg">
@@ -540,7 +539,7 @@
                         <i class="fa-solid fa-money-bill-wave text-xl"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-2">Monetización ⭐</h4>
+                        <h4 class="font-bold text-lg mb-2">Monetización</h4>
                         <p class="text-slate-600 leading-relaxed">
                             Aprenderás a crear paquetes, definir tarifas y estructurar contratos profesionales que te permitan cerrar ventas y generar ingresos predecibles de forma sostenible.
                         </p>
