@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.scrollY > 10) {
             navbar.classList.add('shadow-lg', 'bg-white/95', 'backdrop-blur-md');
             navbar.classList.remove('bg-white', 'py-4');
-            navbar.classList.add('py-2');
+            navbar.classList.add('py-4');
         } else {
-            navbar.classList.remove('shadow-lg', 'bg-white/95', 'backdrop-blur-md', 'py-2');
+            navbar.classList.remove('shadow-lg', 'bg-white/95', 'backdrop-blur-md', 'py-4');
             navbar.classList.add('bg-white', 'py-4');
         }
     });

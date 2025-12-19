@@ -28,13 +28,13 @@
                 </a>
             </div>
 
-            <div class="flex-1 flex items-center justify-start md:justify-center">
+            <div class="flex-1 flex items-center justify-center w-full">
                 
                 <a id="cronometro" href="#oferta" role="timer" aria-live="polite"
                     title="Oferta limitada — haz clic para inscribirte"
-                    class="crono-contenedor group flex flex-col md:flex-row items-start md:items-center gap-0.5 md:gap-5 bg-white px-0 py-0 md:px-6 md:py-1 rounded-none md:rounded-full border-none md:border md:border-slate-300 md:shadow-md cursor-pointer md:hover:shadow-lg md:hover:border-slate-400 md:hover:scale-[1.02] transition-all duration-300 focus:outline-none origin-center transform scale-100">
+                    class="crono-contenedor w-full md:w-auto flex flex-row items-center justify-center md:justify-center bg-transparent md:bg-white px-0 md:px-6 py-0 md:py-1 rounded-none md:rounded-full border-none md:border md:border-slate-300 shadow-none md:shadow-md cursor-pointer hover:shadow-lg hover:border-slate-400 hover:scale-[1.02] transition-all duration-300 focus:outline-none origin-center transform scale-100">
 
-                    <span class="inline-block md:hidden text-[10px] font-black uppercase tracking-tighter text-red-600 mb-0 leading-none text-left pl-0.5">
+                    <span class="inline-block md:hidden text-sm font-black uppercase tracking-tighter text-red-600 leading-none text-left border-r border-slate-300 pr-3 mr-3">
                         Oferta Flash
                     </span>
 
@@ -44,29 +44,29 @@
 
                     <div class="flex items-center gap-1 md:gap-2 text-slate-800">
                         <div class="flex flex-row items-baseline justify-center gap-0.5">
-                            <span id="horas" class="crono-horas font-black text-lg md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
-                            <span class="text-[9px] text-slate-500 uppercase font-bold tracking-wider leading-none">Hrs</span>
+                            <span id="horas" class="crono-horas font-black text-2xl md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
+                            <span class="text-[10px] text-slate-500 uppercase font-bold tracking-wider leading-none">Hrs</span>
                         </div>
 
-                        <span class="text-slate-300 font-black text-sm md:text-2xl leading-none opacity-60 relative -top-[1px]">:</span>
+                        <span class="text-slate-300 font-black text-xl md:text-2xl leading-none opacity-60 relative -top-[1px]">:</span>
 
                         <div class="flex flex-row items-baseline justify-center gap-0.5">
-                            <span id="minutos" class="crono-minutos font-black text-lg md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
-                            <span class="text-[9px] text-slate-500 uppercase font-bold tracking-wider leading-none">Min</span>
+                            <span id="minutos" class="crono-minutos font-black text-2xl md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
+                            <span class="text-[10px] text-slate-500 uppercase font-bold tracking-wider leading-none">Min</span>
                         </div>
 
-                        <span class="text-slate-300 font-black text-sm md:text-2xl leading-none opacity-60 relative -top-[1px]">:</span>
+                        <span class="text-slate-300 font-black text-xl md:text-2xl leading-none opacity-60 relative -top-[1px]">:</span>
 
                         <div class="flex flex-row items-baseline justify-center gap-0.5">
-                            <span id="segundos" class="crono-segundos font-black text-lg md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
-                            <span class="text-[9px] text-slate-500 uppercase font-bold tracking-wider leading-none">Seg</span>
+                            <span id="segundos" class="crono-segundos font-black text-2xl md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
+                            <span class="text-[10px] text-slate-500 uppercase font-bold tracking-wider leading-none">Seg</span>
                         </div>
                     </div>
                 </a>
             </div>
             <script src="./js/cronometro.js"></script>
 
-            <div class="flex items-center">
+            <div class="hidden md:flex items-center">
                 <a href="#oferta"
                     class="btn-primary px-4 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-bold shadow-lg">
                     Inscribirme
