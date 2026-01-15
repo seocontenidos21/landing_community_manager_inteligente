@@ -1445,12 +1445,13 @@
     </footer>
 
     <!-- Botón Flotante de WhatsApp -->
+     <!--
     <div class="whatsapp-float">
         <a href="https://wa.me/584247086547" target="_blank" rel="noopener noreferrer"
             aria-label="Contactar por WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
-    </div>
+    </div>-->
 
     <script src="js/main.js"></script>
     <script>
@@ -1472,6 +1473,71 @@
                 }
             });
         });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // --- CONFIGURACIÓN ---
+        
+        // 1. El enlace EXACTO que ya tienes en tu botón de oferta
+        const enlaceOriginal = 'https://form.typeform.com/to/jb4w2mGt';
+
+        // 2. Destinos modificados según de dónde venga el usuario
+        const destinos = {
+            bio:    'https://form.typeform.com/to/jb4w2mGt#fuente=ig_bio',    // Si viene del perfil (Link in Bio)
+            story:  'https://form.typeform.com/to/jb4w2mGt#fuente=ig_story',  // Si viene de Stories
+            meta:   'https://form.typeform.com/to/jb4w2mGt#fuente=meta_ads'   // Si viene de Publicidad/Fbclid
+        };
+
+        // --- LÓGICA DE DETECCIÓN ---
+        try {
+          const params = new URLSearchParams(window.location.search);
+          
+          // Obtenemos los parámetros y los pasamos a minúsculas para evitar errores
+          const source = (params.get('utm_source') || '').toLowerCase();
+          const content = (params.get('utm_content') || '').toLowerCase();
+          const hasFbclid = params.has('fbclid');
+
+          let nuevoEnlace = null;
+
+          // CASO 1: DETECTAR BIO
+          // Instagram pone automáticamente 'utm_content=link_in_bio'
+          if (content === 'link_in_bio') {
+              console.log('Atribución: Tráfico desde BIO detectado.');
+              nuevoEnlace = destinos.bio;
+          }
+          
+          // CASO 2: DETECTAR STORIES
+          // (Recuerda poner '?utm_source=story' en tus stickers de enlace)
+          else if (hasFbclid || source === 'story' || source === 'ig_story') {
+              console.log('Atribución: Tráfico desde STORY detectado.');
+              nuevoEnlace = destinos.story;
+          }
+
+          // CASO 3: DETECTAR ADS / GENÉRICO DE META
+          // Si tiene fbclid o dice facebook/instagram pero NO cayó en los casos anteriores
+          else if (source === 'facebook' || source === 'instagram' || source === 'meta') {
+              console.log('Atribución: Tráfico Meta/Ads detectado.');
+              nuevoEnlace = destinos.meta;
+          }
+
+          // --- APLICAR CAMBIOS ---
+          if (nuevoEnlace) {
+            // Buscamos el botón que contenga el enlace original
+            const enlaces = document.querySelectorAll(`a[href^="${enlaceOriginal}"]`);
+            
+            enlaces.forEach(enlace => {
+               enlace.href = nuevoEnlace;
+            });
+            
+            if (enlaces.length > 0) {
+                console.log(`Se actualizó el enlace de compra para: ${nuevoEnlace.split('#')[1]}`);
+            }
+          }
+
+        } catch (e) {
+          console.error('Error en script de atribución:', e);
+        }
+      });
     </script>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVNJBLWV"
