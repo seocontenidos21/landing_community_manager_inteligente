@@ -1485,7 +1485,8 @@
         const destinos = {
             bio:    'https://form.typeform.com/to/jb4w2mGt#fuente=ig_bio',    // Si viene del perfil (Link in Bio)
             story:  'https://form.typeform.com/to/jb4w2mGt#fuente=ig_story',  // Si viene de Stories
-            meta:   'https://form.typeform.com/to/jb4w2mGt#fuente=meta_ads'   // Si viene de Publicidad/Fbclid
+            meta:   'https://form.typeform.com/to/jb4w2mGt#fuente=meta_ads',   // Ads
+            masivo: 'https://form.typeform.com/to/jb4w2mGt#fuente=masivo'     // NUEVO: Envíos masivos
         };
 
         // --- LÓGICA DE DETECCIÓN ---
@@ -1499,21 +1500,27 @@
 
           let nuevoEnlace = null;
 
-          // CASO 1: DETECTAR BIO
+          // 1. DETECTAR MASIVO (Email, WhatsApp broadcast, etc.)
+          if (source === 'masivo' || source === 'email' || source === 'whatsapp_masivo') {
+              console.log('Atribución: Tráfico de ENVÍO MASIVO.');
+              nuevoEnlace = destinos.masivo;
+          }
+
+          // CASO 2: DETECTAR BIO
           // Instagram pone automáticamente 'utm_content=link_in_bio'
-          if (content === 'link_in_bio') {
+          else if (content === 'link_in_bio') {
               console.log('Atribución: Tráfico desde BIO detectado.');
               nuevoEnlace = destinos.bio;
           }
           
-          // CASO 2: DETECTAR STORIES
+          // CASO 3: DETECTAR STORIES
           // (Recuerda poner '?utm_source=story' en tus stickers de enlace)
           else if (hasFbclid || source === 'story' || source === 'ig_story') {
               console.log('Atribución: Tráfico desde STORY detectado.');
               nuevoEnlace = destinos.story;
           }
 
-          // CASO 3: DETECTAR ADS / GENÉRICO DE META
+          // CASO 4: DETECTAR ADS / GENÉRICO DE META
           // Si tiene fbclid o dice facebook/instagram pero NO cayó en los casos anteriores
           else if (source === 'facebook' || source === 'instagram' || source === 'meta') {
               console.log('Atribución: Tráfico Meta/Ads detectado.');
