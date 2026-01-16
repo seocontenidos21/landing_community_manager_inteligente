@@ -1336,6 +1336,18 @@
                         <i class="fa-solid fa-lock text-sm md:text-lg"></i>
                     </a>
 
+                    <div class="flex items-center justify-center gap-6 mt-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+                        <i class="fa-brands fa-cc-visa text-3xl" title="Visa"></i>
+                        <i class="fa-brands fa-cc-mastercard text-3xl" title="Mastercard"></i>
+                        <i class="fa-brands fa-cc-amex text-3xl" title="American Express"></i>
+                        <i class="fa-brands fa-cc-paypal text-3xl" title="PayPal"></i>
+                        
+                        <div class="flex items-center gap-1 border border-slate-300 rounded px-2 py-1">
+                            <i class="fa-solid fa-lock text-xs"></i>
+                            <span class="text-[10px] font-bold">SSL SECURE</span>
+                        </div>
+                    </div>
+
                     <div class="text-center mt-6 text-xs text-slate-400 flex justify-center items-center gap-6">
                         <span><i class="fa-solid fa-shield-halved"></i> Pago 100% Seguro</span>
                         <span><i class="fa-solid fa-bolt"></i> Acceso Inmediato</span>
@@ -1551,13 +1563,15 @@
 
         <!-- Copyright Simple -->
         <div class="text-center text-slate-600 text-xs pt-8 border-t border-slate-800 mt-8">
-            <div class="max-w-7xl mx-auto px-6 flex flex-row md:flex-row items-center justify-center">
-                <p>&copy; 2025 SEO Contenidos. Todos los derechos reservados.</p>
-                <!-- <div class="flex gap-6">
-                    <a href="#" class="hover:text-white transition-colors">Términos y Condiciones</a>
-                    <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
-                    <a href="#" class="hover:text-white transition-colors">Cookies</a>
-                </div> -->
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                
+                <p class="text-center md:text-left">&copy; 2025 SEO Contenidos. Todos los derechos reservados.</p>
+                
+                <div class="flex flex-wrap gap-6 justify-center md:justify-end text-[11px] text-slate-500 font-medium">
+                    <a href="politica.html" class="hover:text-slate-300 transition-colors underline decoration-slate-700 underline-offset-2">Política de Privacidad</a>
+                    <a href="#" class="hover:text-slate-300 transition-colors underline decoration-slate-700 underline-offset-2">Términos y Condiciones</a>
+                </div>
+
             </div>
         </div>
     </footer>
