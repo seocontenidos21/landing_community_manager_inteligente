@@ -10,14 +10,31 @@
     <link rel="preconnect" href="https://iframe.mediadelivery.net">
     <link rel="dns-prefetch" href="https://iframe.mediadelivery.net">
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-NVNJBLWV');</script>
+    <script>
+    // 1. Inicializamos el dataLayer vacío
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    // 2. Función que inyecta tu GTM real
+    function loadGTM() {
+        if (window.gtmLoaded) return; // Evitar doble carga
+        window.gtmLoaded = true;
+
+        var script = document.createElement('script');
+        // Aquí ya está puesto tu ID: GTM-NVNJBLWV
+        script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-NVNJBLWV'; 
+        script.async = true;
+        document.head.appendChild(script);
+    }
+
+    // 3. Eventos que disparan la carga (movimiento, scroll, toque)
+    window.addEventListener('mousemove', loadGTM, {once: true});
+    window.addEventListener('scroll', loadGTM, {once: true});
+    window.addEventListener('touchstart', loadGTM, {once: true});
+    
+    // 4. Fallback: Si el usuario no hace nada en 3.5 segundos, carga igual
+    setTimeout(loadGTM, 3500);
+</script>
     <!-- End Google Tag Manager -->
     <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
