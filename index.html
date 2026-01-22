@@ -1486,7 +1486,8 @@
             bio:    'https://form.typeform.com/to/jb4w2mGt#fuente=ig_bio',    // Si viene del perfil (Link in Bio)
             story:  'https://form.typeform.com/to/jb4w2mGt#fuente=ig_story',  // Si viene de Stories
             meta:   'https://form.typeform.com/to/jb4w2mGt#fuente=meta_ads',   // Ads
-            masivo: 'https://form.typeform.com/to/jb4w2mGt#fuente=masivo'     // NUEVO: Envíos masivos
+            masivo: 'https://form.typeform.com/to/jb4w2mGt#fuente=masivo',
+            google: 'https://form.typeform.com/to/jb4w2mGt#fuente=youtube'
         };
 
         // --- LÓGICA DE DETECCIÓN ---
@@ -1495,8 +1496,10 @@
           
           // Obtenemos los parámetros y los pasamos a minúsculas para evitar errores
           const source = (params.get('utm_source') || '').toLowerCase();
+          const medium = (params.get('utm_medium') || '').toLowerCase();
           const content = (params.get('utm_content') || '').toLowerCase();
           const hasFbclid = params.has('fbclid');
+          const hasGclid = params.has('gclid') || params.has('gbraid') || params.has('wbraid');
 
           let nuevoEnlace = null;
 
@@ -1525,6 +1528,13 @@
           else if (source === 'facebook' || source === 'instagram' || source === 'meta') {
               console.log('Atribución: Tráfico Meta/Ads detectado.');
               nuevoEnlace = destinos.meta;
+          }
+
+          // 1. DETECTAR GOOGLE / YOUTUBE ADS (NUEVO)
+          // Se basa en tus ejemplos: gclid, gbraid, utm_medium=google-ads o utm_source=google/youtube
+          else if (hasGclid || source === 'google' || source === 'youtube' || medium === 'google-ads' || medium === 'cpc') {
+              console.log('Atribución: Tráfico de GOOGLE/YOUTUBE ADS detectado.');
+              nuevoEnlace = destinos.google;
           }
 
           // --- APLICAR CAMBIOS ---
