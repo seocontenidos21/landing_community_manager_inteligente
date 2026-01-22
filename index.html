@@ -7,71 +7,173 @@
     <title>Curso Community Manager Inteligente - SEO Contenidos</title>
     <meta name="description"
         content="Aprende a ser Community Manager Inteligente: usa la Inteligencia Artificial para potenciar marcas y multiplicar ventas.">
+    <link rel="preconnect" href="https://iframe.mediadelivery.net">
+    <link rel="dns-prefetch" href="https://iframe.mediadelivery.net">
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NVNJBLWV');</script>
+    <script>
+    // 1. Inicializamos el dataLayer vacío
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    // 2. Función que inyecta tu GTM real
+    function loadGTM() {
+        if (window.gtmLoaded) return; // Evitar doble carga
+        window.gtmLoaded = true;
+
+        var script = document.createElement('script');
+        // Aquí ya está puesto tu ID: GTM-NVNJBLWV
+        script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-NVNJBLWV'; 
+        script.async = true;
+        document.head.appendChild(script);
+    }
+
+    // 3. Eventos que disparan la carga (movimiento, scroll, toque)
+    window.addEventListener('mousemove', loadGTM, {once: true});
+    window.addEventListener('scroll', loadGTM, {once: true});
+    window.addEventListener('touchstart', loadGTM, {once: true});
+    
+    // 4. Fallback: Si el usuario no hace nada en 3.5 segundos, carga igual
+    setTimeout(loadGTM, 3500);
+</script>
     <!-- End Google Tag Manager -->
     <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/estilo-final.css">
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+        "@type": "Course",
+        "name": "Curso Community Manager Inteligente",
+        "description": "Aprende a ser Community Manager Inteligente: usa la Inteligencia Artificial para potenciar marcas y multiplicar ventas.",
+        "provider": {
+            "@type": "Organization",
+            "name": "SEO Contenidos",
+            "sameAs": "https://cursocm.seocontenidos.net/"
+        },
+        "image": [
+            "https://cursocm.seocontenidos.net/img/seo-logo-02-1.webp"
+        ],
+        "offers": {
+            "@type": "Offer",
+            "category": "Paid",
+            "priceCurrency": "USD",
+            "price": "47.00",
+            "availability": "https://schema.org/InStock",
+            "url": "https://cursocm.seocontenidos.net/"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "320",
+            "bestRating": "5",
+            "worstRating": "1"
+        }
+        },
+        {
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+            "@type": "Question",
+            "name": "¿Necesito experiencia previa?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. El curso te lleva desde lo básico hasta estrategias avanzadas. Solo necesitas ganas de aprender."
+            }
+            },
+            {
+            "@type": "Question",
+            "name": "¿Qué herramientas de IA necesito?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Te enseñaremos a usar herramientas accesibles, muchas de ellas con versiones gratuitas."
+            }
+            },
+            {
+            "@type": "Question",
+            "name": "¿El curso tiene horario fijo?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, es 100% online y grabado. Puedes verlo a tu ritmo, en el horario que prefieras y repetirlo las veces que quieras."
+            }
+            },
+            {
+            "@type": "Question",
+            "name": "¿Cómo funciona el certificado?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Al finalizar todos los módulos, obtendrás automáticamente un certificado digital de finalización avalado por SEO Contenidos."
+            }
+            }
+        ]
+        }
+    ]
+    }
+    </script>
 </head>
 
 <body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
     <nav id="main-nav"
         class="bg-white fixed w-full top-0 z-50 border-b border-slate-100 transition-all duration-300 py-4">
         <div class="max-w-6xl mx-auto px-6 relative flex items-center justify-between">
-            
+
             <div class="hidden md:flex items-center">
                 <a href="#" class="group flex items-center">
-                    <img src="img/seo-logo-02-1.webp" alt="Logo SEO Contenidos"
+                    <img src="img/seo-logo-02-1.webp" alt="Logo SEO Contenidos" width="278" height="167"
                         class="h-10 md:h-12 object-contain group-hover:scale-105 transition-transform">
                 </a>
             </div>
 
             <div class="flex-1 flex items-center justify-center w-full">
-                
+
                 <a id="cronometro" href="#oferta" role="timer" aria-live="polite"
                     title="Oferta limitada — haz clic para inscribirte"
                     class="crono-contenedor w-full md:w-auto flex flex-row items-center justify-center md:justify-center bg-transparent md:bg-white px-0 md:px-6 py-0 md:py-1 rounded-none md:rounded-full border-none md:border md:border-slate-300 shadow-none md:shadow-md cursor-pointer hover:shadow-lg hover:border-slate-400 hover:scale-[1.02] transition-all duration-300 focus:outline-none origin-center transform scale-100">
 
-                    <span class="inline-block md:hidden text-sm font-black uppercase tracking-tighter text-red-600 leading-none text-left border-r border-slate-300 pr-3 mr-3">
+                    <span
+                        class="inline-block md:hidden text-sm font-black uppercase tracking-tighter text-red-600 leading-none text-left border-r border-slate-300 pr-3 mr-3">
                         Oferta Flash
                     </span>
 
-                    <span class="hidden md:inline-block text-base md:text-lg uppercase font-black tracking-tight text-red-600 border-r-2 border-slate-200 pr-5 mr-1 leading-none pt-0.5">
+                    <span
+                        class="hidden md:inline-block text-base md:text-lg uppercase font-black tracking-tight text-red-600 border-r-2 border-slate-200 pr-5 mr-1 leading-none pt-0.5">
                         Oferta limitada 24 horas
                     </span>
 
                     <div class="flex items-center gap-1 md:gap-2 text-slate-800">
                         <div class="flex flex-row items-baseline justify-center gap-0.5">
-                            <span id="horas" class="crono-horas font-black text-2xl md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
-                            <span class="text-[10px] text-slate-500 uppercase font-bold tracking-wider leading-none">Hrs</span>
+                            <span id="horas"
+                                class="crono-horas font-black text-2xl md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
+                            <span
+                                class="text-[10px] text-slate-500 uppercase font-bold tracking-wider leading-none">Hrs</span>
                         </div>
 
-                        <span class="text-slate-300 font-black text-xl md:text-2xl leading-none opacity-60 relative -top-[1px]">:</span>
+                        <span
+                            class="text-slate-300 font-black text-xl md:text-2xl leading-none opacity-60 relative -top-[1px]">:</span>
 
                         <div class="flex flex-row items-baseline justify-center gap-0.5">
-                            <span id="minutos" class="crono-minutos font-black text-2xl md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
-                            <span class="text-[10px] text-slate-500 uppercase font-bold tracking-wider leading-none">Min</span>
+                            <span id="minutos"
+                                class="crono-minutos font-black text-2xl md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
+                            <span
+                                class="text-[10px] text-slate-500 uppercase font-bold tracking-wider leading-none">Min</span>
                         </div>
 
-                        <span class="text-slate-300 font-black text-xl md:text-2xl leading-none opacity-60 relative -top-[1px]">:</span>
+                        <span
+                            class="text-slate-300 font-black text-xl md:text-2xl leading-none opacity-60 relative -top-[1px]">:</span>
 
                         <div class="flex flex-row items-baseline justify-center gap-0.5">
-                            <span id="segundos" class="crono-segundos font-black text-2xl md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
-                            <span class="text-[10px] text-slate-500 uppercase font-bold tracking-wider leading-none">Seg</span>
+                            <span id="segundos"
+                                class="crono-segundos font-black text-2xl md:text-3xl tabular-nums font-mono leading-none tracking-tight">00</span>
+                            <span
+                                class="text-[10px] text-slate-500 uppercase font-bold tracking-wider leading-none">Seg</span>
                         </div>
                     </div>
                 </a>
             </div>
-            <script src="./js/cronometro.js"></script>
-
             <div class="hidden md:flex items-center">
                 <a href="#oferta"
                     class="btn-primary px-4 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-bold shadow-lg">
@@ -98,13 +200,13 @@
 
             <div
                 class="w-full max-w-4xl mx-auto mb-6 md:mb-10 shadow-2xl rounded-2xl overflow-hidden border border-slate-200 video-container">
-                <div class="w-full max-w-4xl mx-auto mb-6 md:mb-10 shadow-2xl rounded-2xl overflow-hidden border border-slate-200 bg-black">
+                <div
+                    class="w-full max-w-4xl mx-auto mb-6 md:mb-10 shadow-2xl rounded-2xl overflow-hidden border border-slate-200 bg-black">
                     <div style="position:relative;padding-top:56.25%;">
-                        <iframe 
-                            src="https://iframe.mediadelivery.net/embed/514643/8880bedb-27d7-4202-aa78-d95d02ed6586?autoplay=true&loop=false&muted=false&preload=true&responsive=true" 
-                            loading="lazy" 
-                            style="border:0;position:absolute;top:0;height:100%;width:100%;" 
-                            allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
+                        <iframe
+                            src="https://iframe.mediadelivery.net/embed/514643/8880bedb-27d7-4202-aa78-d95d02ed6586?loop=false&muted=false&preload=false&responsive=true"
+                            loading="lazy" style="border:0;position:absolute;top:0;height:100%;width:100%;"
+                            allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
                             allowfullscreen="true">
                         </iframe>
                     </div>
@@ -112,48 +214,58 @@
             </div>
 
             <p class="text-xl text-slate-600 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
-                Usa la <span>Inteligencia Artificial</span> para volver tu conocimiento de Redes Sociales un trabajo de <span>$500 a $1,500 USD al mes.</span>
+                Usa la <span>Inteligencia Artificial</span> para volver tu conocimiento de Redes Sociales un trabajo de
+                <span>$500 a $1,500 USD al mes.</span>
             </p>
 
-            <div class="flex flex-col md:flex-row items-start md:items-center justify-center gap-4 mb-12 text-lg md:text-lg font-medium text-slate-700 w-full md:w-auto">
-                
-                <div class="feature-chip w-full md:w-auto flex items-start md:items-center justify-start md:justify-center gap-3 md:gap-2 bg-transparent md:bg-white px-0 md:px-5 py-1 md:py-3 rounded-none md:rounded-full border-none md:border md:border-slate-200 shadow-none md:shadow-sm">
+            <div
+                class="flex flex-col md:flex-row items-start md:items-center justify-center gap-4 mb-12 text-lg md:text-lg font-medium text-slate-700 w-full md:w-auto">
+
+                <div
+                    class="feature-chip w-full md:w-auto flex items-start md:items-center justify-start md:justify-center gap-3 md:gap-2 bg-transparent md:bg-white px-0 md:px-5 py-1 md:py-3 rounded-none md:rounded-full border-none md:border md:border-slate-200 shadow-none md:shadow-sm">
                     <i class="hidden md:block fa-solid fa-check text-blue-600"></i>
-                    
-                    <img src="https://seocontenidos.b-cdn.net/check%203.png" alt="Check" class="block md:hidden w-6 h-6 object-contain flex-shrink-0 mt-1">
-                    
+
+                    <img src="https://seocontenidos.b-cdn.net/check%203.png" alt="Check" width="22" height="22"
+                        class="block md:hidden w-6 h-6 object-contain flex-shrink-0 mt-1">
+
                     <span class="text-left leading-tight">Metodología Probada con +350 Marcas en 11 Años</span>
                 </div>
 
-                <div class="feature-chip w-full md:w-auto flex items-start md:items-center justify-start md:justify-center gap-3 md:gap-2 bg-transparent md:bg-white px-0 md:px-5 py-1 md:py-3 rounded-none md:rounded-full border-none md:border md:border-slate-200 shadow-none md:shadow-sm">
+                <div
+                    class="feature-chip w-full md:w-auto flex items-start md:items-center justify-start md:justify-center gap-3 md:gap-2 bg-transparent md:bg-white px-0 md:px-5 py-1 md:py-3 rounded-none md:rounded-full border-none md:border md:border-slate-200 shadow-none md:shadow-sm">
                     <i class="hidden md:block fa-solid fa-check text-blue-600"></i>
-                    <img src="https://seocontenidos.b-cdn.net/check%203.png" alt="Check" class="block md:hidden w-6 h-6 object-contain flex-shrink-0 mt-1">
+                    <img src="https://seocontenidos.b-cdn.net/check%203.png" alt="Check" width="22" height="22"
+                        class="block md:hidden w-6 h-6 object-contain flex-shrink-0 mt-1">
                     <span class="text-left leading-tight">Certificación Profesional Reconocida en LATAM</span>
                 </div>
 
-                <div class="feature-chip w-full md:w-auto flex items-start md:items-center justify-start md:justify-center gap-3 md:gap-2 bg-transparent md:bg-white px-0 md:px-5 py-1 md:py-3 rounded-none md:rounded-full border-none md:border md:border-slate-200 shadow-none md:shadow-sm">
+                <div
+                    class="feature-chip w-full md:w-auto flex items-start md:items-center justify-start md:justify-center gap-3 md:gap-2 bg-transparent md:bg-white px-0 md:px-5 py-1 md:py-3 rounded-none md:rounded-full border-none md:border md:border-slate-200 shadow-none md:shadow-sm">
                     <i class="hidden md:block fa-solid fa-check text-blue-600"></i>
-                    <img src="https://seocontenidos.b-cdn.net/check%203.png" alt="Check" class="block md:hidden w-6 h-6 object-contain flex-shrink-0 mt-1">
+                    <img src="https://seocontenidos.b-cdn.net/check%203.png" alt="Check" width="22" height="22"
+                        class="block md:hidden w-6 h-6 object-contain flex-shrink-0 mt-1">
                     <span class="text-left leading-tight">Acceso de por vida</span>
                 </div>
 
-                <div class="feature-chip w-full md:w-auto flex items-start md:items-center justify-start md:justify-center gap-3 md:gap-2 bg-transparent md:bg-white px-0 md:px-5 py-1 md:py-3 rounded-none md:rounded-full border-none md:border md:border-slate-200 shadow-none md:shadow-sm">
+                <div
+                    class="feature-chip w-full md:w-auto flex items-start md:items-center justify-start md:justify-center gap-3 md:gap-2 bg-transparent md:bg-white px-0 md:px-5 py-1 md:py-3 rounded-none md:rounded-full border-none md:border md:border-slate-200 shadow-none md:shadow-sm">
                     <i class="hidden md:block fa-solid fa-check text-blue-600"></i>
-                    <img src="https://seocontenidos.b-cdn.net/check%203.png" alt="Check" class="block md:hidden w-6 h-6 object-contain flex-shrink-0 mt-1">
+                    <img src="https://seocontenidos.b-cdn.net/check%203.png" alt="Check" width="22" height="22"
+                        class="block md:hidden w-6 h-6 object-contain flex-shrink-0 mt-1">
                     <span class="text-left leading-tight">Garantía 7 Días</span>
                 </div>
 
             </div>
 
             <div class="flex flex-col items-center">
-                
+
                 <div
                     class="bg-white p-6 md:p-8 rounded-3xl border border-slate-200 inline-block shadow-2xl relative group max-w-xl w-full">
-                    
+
                     <h3 class="font-bold mb-4 md:mb-2">OFERTA DE LANZAMIENTO</h3>
-                    
+
                     <div class="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-6 mb-6">
-                        
+
                         <div class="flex flex-col items-center md:items-start leading-tight">
                             <p class="text-slate-400 text-[16px] md:text-xs uppercase font-bold">Precio Regular</p>
                             <p class="text-2xl md:text-2xl text-slate-400 line-through decoration-red-400">$99</p>
@@ -168,8 +280,9 @@
                         class="btn-primary flex items-center justify-center w-full py-3 px-6 md:py-4 md:px-10 rounded-full text-base md:text-lg !font-bold md:!font-black group-hover:scale-[1.02] transition-transform">
                         QUIERO COMENZAR AHORA <i class="fa-solid fa-arrow-right ml-2 text-sm md:text-base"></i>
                     </a>
-                    
-                    <p class="text-center text-slate-500 text-xs mt-3 font-medium flex items-center justify-center gap-2">
+
+                    <p
+                        class="text-center text-slate-500 text-xs mt-3 font-medium flex items-center justify-center gap-2">
                         Acceso inmediato • Sin mensualidades
                     </p>
                 </div>
@@ -184,7 +297,7 @@
                     No Te Falta Talento. Te Falta <span class="text-gradient-green">Metodología.</span>
                 </h2>
                 <p class="text-slate-500 text-lg">La diferencia entre un CM que cobra $300 y uno que cobra $1,500
-                está en la metodología profesional. ¿Cuál área necesitas desarrollar?
+                    está en la metodología profesional. ¿Cuál área necesitas desarrollar?
                 </p>
                 <!--<p class="text-slate-500 text-lg">Todo lo que necesitas para
                     Triunfar Como Community Manager, en una sola certificación
@@ -194,104 +307,138 @@
                 </p>
             </div>-->
 
-            <br><br>
+                <br><br>
 
-            <div class="space-y-5">
-                
-                <div class="group flex flex-col md:flex-row bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg hover:border-slate-300 transition-all duration-300">
-                    <div class="w-full md:w-5/12 p-6 md:p-8 flex items-center bg-white relative z-10">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-full bg-red-50 text-red-500 flex items-center justify-center text-xl flex-shrink-0">
-                                <i class="fa-regular fa-clock"></i>
+                <div class="space-y-5">
+
+                    <div
+                        class="group flex flex-col md:flex-row bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+                        <div class="w-full md:w-5/12 p-6 md:p-8 flex items-center bg-white relative z-10">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-red-50 text-red-500 flex items-center justify-center text-xl flex-shrink-0">
+                                    <i class="fa-regular fa-clock"></i>
+                                </div>
+                                <h3 class="font-bold leading-tight text-2xl md:text-xl">
+                                    Buscas Optimizar Tu Tiempo
+                                </h3>
                             </div>
-                            <h3 class="font-bold leading-tight text-2xl md:text-xl">
-                                Buscas Optimizar Tu Tiempo
-                            </h3>
+                        </div>
+                        <div
+                            class="w-full md:w-7/12 bg-slate-100 p-6 md:p-8 flex items-center md:rounded-l-[3rem] group-hover:bg-red-50/50 transition-colors border-l border-slate-100/50">
+                            <p class="text-slate-600 leading-relaxed">
+                                <span class="block md:hidden text-lg">
+                                    Pasas horas creando contenido para redes sociales, entre diseño, copywriting e
+                                    investigación, y el tiempo se va sin darte cuenta.
+                                </span>
+                                <span class="hidden md:block text-sm md:text-base">
+                                    Pasas horas creando contenido para redes sociales, entre diseño, copywriting e
+                                    investigación, y el tiempo se va sin darte cuenta. Te quedas sin ideas, trabajas más
+                                    de lo que quisieras y sientes que el esfuerzo no siempre refleja lo que cobras,
+                                    cuando tu objetivo es producir contenido de calidad en menos tiempo y con un flujo
+                                    de trabajo más inteligente.
+                                </span>
+                            </p>
                         </div>
                     </div>
-                    <div class="w-full md:w-7/12 bg-slate-100 p-6 md:p-8 flex items-center md:rounded-l-[3rem] group-hover:bg-red-50/50 transition-colors border-l border-slate-100/50">
-                        <p class="text-slate-600 leading-relaxed">
-                            <span class="block md:hidden text-lg">
-                                Pasas horas creando contenido para redes sociales, entre diseño, copywriting e investigación, y el tiempo se va sin darte cuenta.
-                            </span>
-                            <span class="hidden md:block text-sm md:text-base">
-                                Pasas horas creando contenido para redes sociales, entre diseño, copywriting e investigación, y el tiempo se va sin darte cuenta. Te quedas sin ideas, trabajas más de lo que quisieras y sientes que el esfuerzo no siempre refleja lo que cobras, cuando tu objetivo es producir contenido de calidad en menos tiempo y con un flujo de trabajo más inteligente.
-                            </span>
-                        </p>
-                    </div>
-                </div>
 
-                <div class="group flex flex-col md:flex-row bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg hover:border-slate-300 transition-all duration-300">
-                    <div class="w-full md:w-5/12 p-6 md:p-8 flex items-center bg-white relative z-10">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-full bg-green-50 text-green-500 flex items-center justify-center text-xl flex-shrink-0">
-                                <i class="fa-solid fa-robot"></i>
+                    <div
+                        class="group flex flex-col md:flex-row bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+                        <div class="w-full md:w-5/12 p-6 md:p-8 flex items-center bg-white relative z-10">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-green-50 text-green-500 flex items-center justify-center text-xl flex-shrink-0">
+                                    <i class="fa-solid fa-robot"></i>
+                                </div>
+                                <h3 class="font-bold leading-tight text-2xl md:text-xl">
+                                    Usa la IA de Forma Profesional
+                                </h3>
                             </div>
-                            <h3 class="font-bold leading-tight text-2xl md:text-xl">
-                                Usa la IA de Forma Profesional
-                            </h3>
+                        </div>
+                        <div
+                            class="w-full md:w-7/12 bg-slate-100 p-6 md:p-8 flex items-center md:rounded-l-[3rem] group-hover:bg-green-50/50 transition-colors border-l border-slate-100/50">
+                            <p class="text-slate-600 leading-relaxed">
+                                <span class="block md:hidden text-lg">
+                                    Ves que todos hablan de Inteligencia Artificial y sabes que está transformando el
+                                    marketing digital, pero no tienes claro cómo usarla a tu favor sin perder tu toque
+                                    humano.
+                                </span>
+                                <span class="hidden md:block text-sm md:text-base">
+                                    Ves que todos hablan de Inteligencia Artificial y sabes que está transformando el
+                                    marketing digital, pero no tienes claro cómo usarla a tu favor sin perder tu toque
+                                    humano. Has probado herramientas como ChatGPT, aunque los resultados no siempre te
+                                    convencen, y te gustaría aprender a integrarlas de forma estratégica en tu trabajo
+                                    diario, usando prompts que realmente funcionen y manteniendo una voz auténtica que
+                                    conecte con tu audiencia.
+                                </span>
+                            </p>
                         </div>
                     </div>
-                    <div class="w-full md:w-7/12 bg-slate-100 p-6 md:p-8 flex items-center md:rounded-l-[3rem] group-hover:bg-green-50/50 transition-colors border-l border-slate-100/50">
-                        <p class="text-slate-600 leading-relaxed">
-                            <span class="block md:hidden text-lg">
-                                Ves que todos hablan de Inteligencia Artificial y sabes que está transformando el marketing digital, pero no tienes claro cómo usarla a tu favor sin perder tu toque humano.
-                            </span>
-                            <span class="hidden md:block text-sm md:text-base">
-                                Ves que todos hablan de Inteligencia Artificial y sabes que está transformando el marketing digital, pero no tienes claro cómo usarla a tu favor sin perder tu toque humano. Has probado herramientas como ChatGPT, aunque los resultados no siempre te convencen, y te gustaría aprender a integrarlas de forma estratégica en tu trabajo diario, usando prompts que realmente funcionen y manteniendo una voz auténtica que conecte con tu audiencia.
-                            </span>
-                        </p>
-                    </div>
-                </div>
 
-                <div class="group flex flex-col md:flex-row bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg hover:border-slate-300 transition-all duration-300">
-                    <div class="w-full md:w-5/12 p-6 md:p-8 flex items-center bg-white relative z-10">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center text-xl flex-shrink-0">
-                                <i class="fa-solid fa-chart-line"></i>
+                    <div
+                        class="group flex flex-col md:flex-row bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+                        <div class="w-full md:w-5/12 p-6 md:p-8 flex items-center bg-white relative z-10">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center text-xl flex-shrink-0">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <h3 class="font-bold leading-tight text-2xl md:text-xl">
+                                    Buscas Trabajar con Estrategia
+                                </h3>
                             </div>
-                            <h3 class="font-bold leading-tight text-2xl md:text-xl">
-                                Buscas Trabajar con Estrategia
-                            </h3>
+                        </div>
+                        <div
+                            class="w-full md:w-7/12 bg-slate-100 p-6 md:p-8 flex items-center md:rounded-l-[3rem] group-hover:bg-blue-50/50 transition-colors border-l border-slate-100/50">
+                            <p class="text-slate-600 leading-relaxed">
+                                <span class="block md:hidden text-lg">
+                                    Publicas contenido “por cumplir”, sin objetivos claros ni métricas reales, y muchas
+                                    veces sin saber si tu esfuerzo realmente genera ventas.
+                                </span>
+                                <span class="hidden md:block text-sm md:text-base">
+                                    Publicas contenido “por cumplir”, sin objetivos claros ni métricas reales, y muchas
+                                    veces sin saber si tu esfuerzo realmente genera ventas. Aunque ya tienes presencia
+                                    en redes sociales, te falta una metodología estructurada que te permita definir
+                                    KPIs, crear estrategias basadas en datos y demostrar con reportes profesionales el
+                                    valor real de tu trabajo.
+                                </span>
+                            </p>
                         </div>
                     </div>
-                    <div class="w-full md:w-7/12 bg-slate-100 p-6 md:p-8 flex items-center md:rounded-l-[3rem] group-hover:bg-blue-50/50 transition-colors border-l border-slate-100/50">
-                        <p class="text-slate-600 leading-relaxed">
-                            <span class="block md:hidden text-lg">
-                                Publicas contenido “por cumplir”, sin objetivos claros ni métricas reales, y muchas veces sin saber si tu esfuerzo realmente genera ventas.
-                            </span>
-                            <span class="hidden md:block text-sm md:text-base">
-                                Publicas contenido “por cumplir”, sin objetivos claros ni métricas reales, y muchas veces sin saber si tu esfuerzo realmente genera ventas. Aunque ya tienes presencia en redes sociales, te falta una metodología estructurada que te permita definir KPIs, crear estrategias basadas en datos y demostrar con reportes profesionales el valor real de tu trabajo.
-                            </span>
-                        </p>
-                    </div>
-                </div>
 
-                <div class="group flex flex-col md:flex-row bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg hover:border-slate-300 transition-all duration-300">
-                    <div class="w-full md:w-5/12 p-6 md:p-8 flex items-center bg-white relative z-10">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-full bg-yellow-50 text-yellow-600 flex items-center justify-center text-xl flex-shrink-0">
-                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <div
+                        class="group flex flex-col md:flex-row bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-lg hover:border-slate-300 transition-all duration-300">
+                        <div class="w-full md:w-5/12 p-6 md:p-8 flex items-center bg-white relative z-10">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-yellow-50 text-yellow-600 flex items-center justify-center text-xl flex-shrink-0">
+                                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                                </div>
+                                <h3 class="font-bold leading-tight text-2xl md:text-xl">
+                                    Buscas Profesionalizar Tu Servicio
+                                </h3>
                             </div>
-                            <h3 class="font-bold leading-tight text-2xl md:text-xl">
-                                Buscas Profesionalizar Tu Servicio
-                            </h3>
+                        </div>
+                        <div
+                            class="w-full md:w-7/12 bg-slate-100 p-6 md:p-8 flex items-center md:rounded-l-[3rem] group-hover:bg-yellow-50/50 transition-colors border-l border-slate-100/50">
+                            <p class="text-slate-600 leading-relaxed">
+                                <span class="block md:hidden text-lg">
+                                    Aunque tienes conocimientos de redes sociales, sabes que necesitas profesionalizar
+                                    tus servicios, estructurar propuestas sólidas, definir precios basados en valor y
+                                    atraer clientes que valoren tu trabajo.
+                                </span>
+                                <span class="hidden md:block text-sm md:text-base">
+                                    Aunque tienes conocimientos de redes sociales, sabes que necesitas profesionalizar
+                                    tus servicios, estructurar propuestas sólidas, definir precios basados en valor y
+                                    atraer clientes que realmente valoren tu trabajo para construir una carrera
+                                    sostenible con ingresos estables.
+                                </span>
+                            </p>
                         </div>
                     </div>
-                    <div class="w-full md:w-7/12 bg-slate-100 p-6 md:p-8 flex items-center md:rounded-l-[3rem] group-hover:bg-yellow-50/50 transition-colors border-l border-slate-100/50">
-                        <p class="text-slate-600 leading-relaxed">
-                            <span class="block md:hidden text-lg">
-                               Aunque tienes conocimientos de redes sociales, sabes que necesitas profesionalizar tus servicios, estructurar propuestas sólidas, definir precios basados en valor y atraer clientes que valoren tu trabajo.
-                            </span>
-                            <span class="hidden md:block text-sm md:text-base">
-                                Aunque tienes conocimientos de redes sociales, sabes que necesitas profesionalizar tus servicios, estructurar propuestas sólidas, definir precios basados en valor y atraer clientes que realmente valoren tu trabajo para construir una carrera sostenible con ingresos estables.
-                            </span>
-                        </p>
-                    </div>
-                </div>
 
+                </div>
             </div>
-        </div>
     </section>
 
     <section id="transformacion" class="py-4 md:py-24 px-6 bg-white">
@@ -368,16 +515,16 @@
         </div>
     </section>
 
-    <!-- --> <section id="metodologia" class="py-10 md:py-24 px-6 bg-slate-50 border-y border-slate-200 overflow-hidden">
+    <!-- -->
+    <section id="metodologia" class="py-10 md:py-24 px-6 bg-slate-50 border-y border-slate-200 overflow-hidden">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div class="md:w-1/2">
                 <div class="bg-white p-8 rounded-3xl -rotate-2 shadow-2xl border border-slate-100 relative group">
                     <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent rounded-3xl opacity-50">
                     </div>
                     <div class="relative z-10 flex flex-col items-center text-center">
-                        <img src="img/logo.png" alt="Logo SEO Contenidos" class="h-20 mb-4 object-contain">
-                        <div class="font-brand font-black text-5xl tracking-tighter mb-2">SEO CONTENIDOS
-                        </div>
+                        <img src="img/seo-logo-02-1.webp" alt="Logo SEO Contenidos" width="278" height="167"
+                            class="h-40 mb-4 object-contain">
                         <div class="text-sm text-green-600 font-bold uppercase tracking-[0.2em]">Marketing Agency</div>
                     </div>
                 </div>
@@ -502,86 +649,100 @@
     </section> -->
     <section id="habilidades" class="py-10 md:py-24 px-6 bg-white">
         <div class="max-w-6xl mx-auto">
-            <h2 class="font-bold text-center mb-2">Habilidades Que <span class="text-gradient-red">Desarrollarás</span></h2>
-            
+            <h2 class="font-bold text-center mb-2">Habilidades Que <span class="text-gradient-red">Desarrollarás</span>
+            </h2>
+
             <h3 class="font-bold text-center mb-8 md:mb-16">6 Competencias Clave Para Destacar Como CM Profesional</h3>
-            
+
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                 <div class="flex gap-5">
-                    <div class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-200">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-200">
                         <i class="fa-solid fa-bullseye text-xl"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-lg mb-2">Estrategia & KPIs</h4>
                         <p class="text-slate-600 leading-relaxed">
-                            Definirás objetivos claros y métricas relevantes que te permitirán demostrar el ROI real y el valor de tus resultados ante tus clientes.
+                            Definirás objetivos claros y métricas relevantes que te permitirán demostrar el ROI real y
+                            el valor de tus resultados ante tus clientes.
                         </p>
                     </div>
                 </div>
 
                 <div class="flex gap-5">
-                    <div class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-200">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-200">
                         <i class="fa-solid fa-magnifying-glass-chart text-xl"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-lg mb-2">Investigación con IA</h4>
                         <p class="text-slate-600 leading-relaxed">
-                            Analizarás a la competencia y a tu audiencia en minutos utilizando prompts avanzados para obtener insights accionables.
+                            Analizarás a la competencia y a tu audiencia en minutos utilizando prompts avanzados para
+                            obtener insights accionables.
                         </p>
                     </div>
                 </div>
 
                 <div class="flex gap-5">
-                    <div class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-200">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-200">
                         <i class="fa-solid fa-pen-nib text-xl"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-lg mb-2">Contenido Infinito</h4>
                         <p class="text-slate-600 leading-relaxed">
-                            Nunca más te quedarás en blanco. Crearás calendarios de contenido estratégico en minutos utilizando IA para generar ideas claras y naturales.
+                            Nunca más te quedarás en blanco. Crearás calendarios de contenido estratégico en minutos
+                            utilizando IA para generar ideas claras y naturales.
                         </p>
                     </div>
                 </div>
 
                 <div class="flex gap-5">
-                    <div class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-200">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-200">
                         <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-lg mb-2">Diseño Visual IA</h4>
                         <p class="text-slate-600 leading-relaxed">
-                            Aprenderás a crear imágenes, carruseles y flyers impactantes con apoyo de herramientas de IA, logrando piezas profesionales sin depender de un diseñador.
+                            Aprenderás a crear imágenes, carruseles y flyers impactantes con apoyo de herramientas de
+                            IA, logrando piezas profesionales sin depender de un diseñador.
                         </p>
                     </div>
                 </div>
 
                 <div class="flex gap-5">
-                    <div class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-200">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-200">
                         <i class="fa-solid fa-video text-xl"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-lg mb-2">Video Marketing</h4>
                         <p class="text-slate-600 leading-relaxed">
-                            Dominarás la creación de Reels y videos virales, adaptando trends rápidamente y editando contenido de alto engagement con ayuda de IA.
+                            Dominarás la creación de Reels y videos virales, adaptando trends rápidamente y editando
+                            contenido de alto engagement con ayuda de IA.
                         </p>
                     </div>
                 </div>
 
                 <div class="flex gap-5">
-                    <div class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-200">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-200">
                         <i class="fa-solid fa-money-bill-wave text-xl"></i>
                     </div>
                     <div>
                         <h4 class="font-bold text-lg mb-2">Monetización</h4>
                         <p class="text-slate-600 leading-relaxed">
-                            Aprenderás a crear paquetes, definir tarifas y estructurar contratos profesionales que te permitan cerrar ventas y generar ingresos predecibles de forma sostenible.
+                            Aprenderás a crear paquetes, definir tarifas y estructurar contratos profesionales que te
+                            permitan cerrar ventas y generar ingresos predecibles de forma sostenible.
                         </p>
                     </div>
                 </div>
             </div>
 
             <div class="text-center mt-16 flex flex-col items-center">
-                <a href="#oferta" class="btn-primary inline-block py-4 px-10 rounded-full transition shadow-xl hover:shadow-2xl text-lg uppercase tracking-wide">
+                <a href="#oferta"
+                    class="btn-primary inline-block py-4 px-10 rounded-full transition shadow-xl hover:shadow-2xl text-lg uppercase tracking-wide">
                     QUIERO DOMINAR ESTAS HABILIDADES
                 </a>
                 <p class="mt-4 text-slate-500 font-bold text-lg"> Solo $47 USD (antes $99)</p>
@@ -813,7 +974,9 @@
                     <div class="accordion-content open">
                         <div
                             class="accordion-inner p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 ml-[3.5rem] text-lg">
-                            Deja de sentir que “tienes que hacerlo todo”. Aquí entiendes el <b>rol real del Community Manager</b> y cómo usar la <b>Inteligencia Artificial</b> para producir más contenido con mejor calidad y en menos tiempo, sin perder criterio profesional.
+                            Deja de sentir que “tienes que hacerlo todo”. Aquí entiendes el <b>rol real del Community
+                                Manager</b> y cómo usar la <b>Inteligencia Artificial</b> para producir más contenido
+                            con mejor calidad y en menos tiempo, sin perder criterio profesional.
                         </div>
                     </div>
                 </details>
@@ -833,7 +996,9 @@
                     <div class="accordion-content">
                         <div
                             class="accordion-inner p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 ml-[3.5rem] text-lg">
-                            La gestión de redes no empieza publicando: empieza <b>alineando expectativas con el cliente</b>. En este módulo aprendes a definir objetivos, KPIs y métricas que demuestran tu impacto, para que tu trabajo se valore y puedas sostener clientes con resultados claros.
+                            La gestión de redes no empieza publicando: empieza <b>alineando expectativas con el
+                                cliente</b>. En este módulo aprendes a definir objetivos, KPIs y métricas que demuestran
+                            tu impacto, para que tu trabajo se valore y puedas sostener clientes con resultados claros.
                         </div>
                     </div>
                 </details>
@@ -853,7 +1018,9 @@
                     <div class="accordion-content">
                         <div
                             class="accordion-inner p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 ml-[3.5rem] text-lg">
-                            La estrategia no se inventa: se investiga. Aquí aprendes a usar IA para analizar mercado, detectar patrones, identificar competencia real y descubrir oportunidades que la mayoría pasa por alto. Vas a investigar como consultor y decidir como estratega.
+                            La estrategia no se inventa: se investiga. Aquí aprendes a usar IA para analizar mercado,
+                            detectar patrones, identificar competencia real y descubrir oportunidades que la mayoría
+                            pasa por alto. Vas a investigar como consultor y decidir como estratega.
                         </div>
                     </div>
                 </details>
@@ -873,7 +1040,9 @@
                     <div class="accordion-content">
                         <div
                             class="accordion-inner p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 ml-[3.5rem] text-lg">
-                            Una publicación no vende por suerte. Vende por proceso. En este módulo aprendes el sistema para pasar de una idea a una estrategia, crear contenidos atractivos y guiar al usuario desde el descubrimiento hasta la compra, usando IA en cada etapa.
+                            Una publicación no vende por suerte. Vende por proceso. En este módulo aprendes el sistema
+                            para pasar de una idea a una estrategia, crear contenidos atractivos y guiar al usuario
+                            desde el descubrimiento hasta la compra, usando IA en cada etapa.
                         </div>
                     </div>
                 </details>
@@ -893,7 +1062,9 @@
                     <div class="accordion-content">
                         <div
                             class="accordion-inner p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 ml-[3.5rem] text-lg">
-                            No existe “un solo usuario”. La misma persona piensa distinto según la red que usa. Aquí aprendes a transformar una idea en mensajes y formatos para cada plataforma, para conectar mejor y lograr coherencia sin perder impacto.
+                            No existe “un solo usuario”. La misma persona piensa distinto según la red que usa. Aquí
+                            aprendes a transformar una idea en mensajes y formatos para cada plataforma, para conectar
+                            mejor y lograr coherencia sin perder impacto.
                         </div>
                     </div>
                 </details>
@@ -913,7 +1084,9 @@
                     <div class="accordion-content">
                         <div
                             class="accordion-inner p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 ml-[3.5rem] text-lg">
-                            Si no captas atención en segundos, perdiste. Aquí aprendes los formatos que realmente funcionan y cómo crear ganchos irresistibles, estructura de retención y CTAs que impulsan interacción, posicionamiento o ventas (con lógica de agencia).
+                            Si no captas atención en segundos, perdiste. Aquí aprendes los formatos que realmente
+                            funcionan y cómo crear ganchos irresistibles, estructura de retención y CTAs que impulsan
+                            interacción, posicionamiento o ventas (con lógica de agencia).
                         </div>
                     </div>
                 </details>
@@ -933,7 +1106,9 @@
                     <div class="accordion-content">
                         <div
                             class="accordion-inner p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 ml-[3.5rem] text-lg">
-                            Este módulo es para ahorrar tiempo de verdad. Aprendes a acelerar diseño y edición con herramientas de IA para producir piezas de alto impacto: videos, animaciones, efectos y gráficos que destacan y venden, incluso si no eres editor experto.
+                            Este módulo es para ahorrar tiempo de verdad. Aprendes a acelerar diseño y edición con
+                            herramientas de IA para producir piezas de alto impacto: videos, animaciones, efectos y
+                            gráficos que destacan y venden, incluso si no eres editor experto.
                         </div>
                     </div>
                 </details>
@@ -953,7 +1128,10 @@
                     <div class="accordion-content">
                         <div
                             class="accordion-inner p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 ml-[3.5rem] text-lg">
-                            La reputación se construye (o se destruye) en los comentarios. Aquí aprendes a gestionar comunidad con un método profesional: respuestas rápidas y bien escritas, manejo de quejas y comentarios sensibles, y prevención/solución de crisis en tiempo real combinando IA + criterio humano.
+                            La reputación se construye (o se destruye) en los comentarios. Aquí aprendes a gestionar
+                            comunidad con un método profesional: respuestas rápidas y bien escritas, manejo de quejas y
+                            comentarios sensibles, y prevención/solución de crisis en tiempo real combinando IA +
+                            criterio humano.
                         </div>
                     </div>
                 </details>
@@ -973,7 +1151,9 @@
                     <div class="accordion-content">
                         <div
                             class="accordion-inner p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 ml-[3.5rem] text-lg">
-                            No todo trend conviene. En este módulo aprendes cómo analizar y producir contenido viral con criterios reales: pertinencia, timing, creatividad y sentido común. Vas a crear contenido útil, inspirador o divertido que conecta de verdad.
+                            No todo trend conviene. En este módulo aprendes cómo analizar y producir contenido viral con
+                            criterios reales: pertinencia, timing, creatividad y sentido común. Vas a crear contenido
+                            útil, inspirador o divertido que conecta de verdad.
                         </div>
                     </div>
                 </details>
@@ -992,7 +1172,10 @@
                     <div class="accordion-content">
                         <div
                             class="accordion-inner p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 ml-[3.5rem] text-lg">
-                            No se trata de “ver números”: se trata de saber qué hacer con ellos. Aquí aprendes a diagnosticar fallas, entender señales clave de Instagram y TikTok, optimizar CTAs, bio, historias destacadas y contenido según resultados, y crear reportes profesionales que justifican decisiones.
+                            No se trata de “ver números”: se trata de saber qué hacer con ellos. Aquí aprendes a
+                            diagnosticar fallas, entender señales clave de Instagram y TikTok, optimizar CTAs, bio,
+                            historias destacadas y contenido según resultados, y crear reportes profesionales que
+                            justifican decisiones.
                         </div>
                     </div>
                 </details>
@@ -1011,7 +1194,9 @@
                     <div class="accordion-content">
                         <div
                             class="accordion-inner p-6 pt-0 text-slate-600 leading-relaxed border-t border-slate-100 ml-[3.5rem] text-lg">
-                            Aquí aterrizas todo en dinero y estabilidad. Aprendes la realidad del mercado: rangos, oportunidades, cómo fijar precios basado en valor (no por “publicar”), estructurar paquetes, cobrar por adelantado y protegerte con contratos para trabajar como profesional serio.
+                            Aquí aterrizas todo en dinero y estabilidad. Aprendes la realidad del mercado: rangos,
+                            oportunidades, cómo fijar precios basado en valor (no por “publicar”), estructurar paquetes,
+                            cobrar por adelantado y protegerte con contratos para trabajar como profesional serio.
                         </div>
                     </div>
                 </details>
@@ -1019,21 +1204,27 @@
         </div>
     </section>
 
-    <section id="testimonios" class="py-10 md:py-24 px-6 bg-white border-t border-slate-100">        
+    <section id="testimonios" class="py-10 md:py-24 px-6 bg-white border-t border-slate-100">
         <div class="max-w-6xl mx-auto">
-            <h2 class="font-bold text-center mb-16">Lo Que Dicen Nuestros <span class="text-gradient-blue">Alumnos</span></h2>
+            <h2 class="font-bold text-center mb-16">Lo Que Dicen Nuestros <span
+                    class="text-gradient-blue">Alumnos</span></h2>
 
             <div class="grid md:grid-cols-3 gap-8 mb-16">
-                
+
                 <div class="card-clean p-8 bg-slate-50 border-none shadow-sm flex flex-col h-full">
                     <div class="flex text-brand-blue mb-4 text-xs gap-1">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
                     </div>
                     <p class="text-slate-600 text-sm mb-6 italic leading-relaxed flex-grow">
-                        "Me dio la estructura profesional que necesitaba. Apliqué las plantillas del Módulo 11 y ahora presento propuestas mucho más sólidas. La parte de IA me ayudó a optimizar mi tiempo significativamente."
+                        "Me dio la estructura profesional que necesitaba. Apliqué las plantillas del Módulo 11 y ahora
+                        presento propuestas mucho más sólidas. La parte de IA me ayudó a optimizar mi tiempo
+                        significativamente."
                     </p>
                     <div class="flex items-center gap-4 border-t border-slate-200 pt-4 mt-auto">
-                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center font-bold text-white text-xs flex-shrink-0">
+                        <div
+                            class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center font-bold text-white text-xs flex-shrink-0">
                             CR
                         </div>
                         <div>
@@ -1046,13 +1237,17 @@
 
                 <div class="card-clean p-8 bg-slate-50 border-none shadow-sm flex flex-col h-full">
                     <div class="flex text-brand-blue mb-4 text-xs gap-1">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
                     </div>
                     <p class="text-slate-600 text-sm mb-6 italic leading-relaxed flex-grow">
-                        "Contenido claro y práctico, sin relleno. Ahora trabajo con datos reales y tengo reportes profesionales que demuestran mi valor. Me dio mucha más confianza con clientes."
+                        "Contenido claro y práctico, sin relleno. Ahora trabajo con datos reales y tengo reportes
+                        profesionales que demuestran mi valor. Me dio mucha más confianza con clientes."
                     </p>
                     <div class="flex items-center gap-4 border-t border-slate-200 pt-4 mt-auto">
-                        <div class="w-10 h-10 bg-violet-600 rounded-full flex items-center justify-center font-bold text-white text-xs flex-shrink-0">
+                        <div
+                            class="w-10 h-10 bg-violet-600 rounded-full flex items-center justify-center font-bold text-white text-xs flex-shrink-0">
                             ML
                         </div>
                         <div>
@@ -1065,13 +1260,17 @@
 
                 <div class="card-clean p-8 bg-slate-50 border-none shadow-sm flex flex-col h-full">
                     <div class="flex text-brand-blue mb-4 text-xs gap-1">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
                     </div>
                     <p class="text-slate-600 text-sm mb-6 italic leading-relaxed flex-grow">
-                        "Como estudiante, este curso me dio herramientas prácticas que no vi en la universidad. El Módulo 11 fue clave. A las pocas semanas conseguí mi primer cliente formal."
+                        "Como estudiante, este curso me dio herramientas prácticas que no vi en la universidad. El
+                        Módulo 11 fue clave. A las pocas semanas conseguí mi primer cliente formal."
                     </p>
                     <div class="flex items-center gap-4 border-t border-slate-200 pt-4 mt-auto">
-                        <div class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center font-bold text-white text-xs flex-shrink-0">
+                        <div
+                            class="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center font-bold text-white text-xs flex-shrink-0">
                             SG
                         </div>
                         <div>
@@ -1115,10 +1314,11 @@
 
         <div class="max-w-5xl mx-auto relative z-10">
             <h2 class="font-bold text-center mb-12 text-white">Este entrenamiento es para ti si...</h2>
-            
+
             <div class="grid md:grid-cols-2 gap-8">
-                
-                <div class="flex gap-5 items-start p-6 rounded-2xl bg-white/10 border border-white/20 hover:bg-white/15 transition backdrop-blur-sm">
+
+                <div
+                    class="flex gap-5 items-start p-6 rounded-2xl bg-white/10 border border-white/20 hover:bg-white/15 transition backdrop-blur-sm">
                     <div class="bg-blue-600 p-3 rounded-lg"><i class="fa-solid fa-check text-white"></i></div>
                     <div>
                         <h4 class="font-bold text-xl md:text-2xl mb-2 text-white">Eres Community Manager</h4>
@@ -1128,17 +1328,20 @@
                     </div>
                 </div>
 
-                <div class="flex gap-5 items-start p-6 rounded-2xl bg-white/10 border border-white/20 hover:bg-white/15 transition backdrop-blur-sm">
+                <div
+                    class="flex gap-5 items-start p-6 rounded-2xl bg-white/10 border border-white/20 hover:bg-white/15 transition backdrop-blur-sm">
                     <div class="bg-blue-600 p-3 rounded-lg"><i class="fa-solid fa-rocket text-white"></i></div>
                     <div>
                         <h4 class="font-bold text-xl md:text-2xl mb-2 text-white">Eres Emprendedor</h4>
                         <p class="text-slate-200 text-base md:text-lg leading-relaxed">
-                            Quieres manejar tus propias redes y aplicar IA para crecer sin depender de agencias costosas.
+                            Quieres manejar tus propias redes y aplicar IA para crecer sin depender de agencias
+                            costosas.
                         </p>
                     </div>
                 </div>
 
-                <div class="flex gap-5 items-start p-6 rounded-2xl bg-white/10 border border-white/20 hover:bg-white/15 transition backdrop-blur-sm">
+                <div
+                    class="flex gap-5 items-start p-6 rounded-2xl bg-white/10 border border-white/20 hover:bg-white/15 transition backdrop-blur-sm">
                     <div class="bg-blue-600 p-3 rounded-lg"><i class="fa-solid fa-user-graduate text-white"></i></div>
                     <div>
                         <h4 class="font-bold text-xl md:text-2xl mb-2 text-white">Buscas tu primer empleo</h4>
@@ -1148,7 +1351,8 @@
                     </div>
                 </div>
 
-                <div class="flex gap-5 items-start p-6 rounded-2xl bg-white/10 border border-white/20 hover:bg-white/15 transition backdrop-blur-sm">
+                <div
+                    class="flex gap-5 items-start p-6 rounded-2xl bg-white/10 border border-white/20 hover:bg-white/15 transition backdrop-blur-sm">
                     <div class="bg-blue-600 p-3 rounded-lg"><i class="fa-solid fa-briefcase text-white"></i></div>
                     <div>
                         <h4 class="font-bold text-xl md:text-2xl mb-2 text-white">Eres Empresario</h4>
@@ -1207,17 +1411,32 @@
 
                     <div class="text-center p-8 rounded-2xl mb-8">
                         <p class="text-slate-400 font-bold text-sm line-through mb-1">VALOR: $99 USD</p>
-                    <div class="text-5xl md:text-6xl font-black text-slate-900 mb-8 tracking-tight">
-                        $47 USD
-                    </div>
+                        <div class="text-5xl md:text-6xl font-black text-slate-900 mb-8 tracking-tight">
+                            $47 USD
+                        </div>
                     </div>
 
-                    <a href="https://form.typeform.com/to/jb4w2mGt" 
-                    target="_blank" 
-                    class="w-full btn-primary py-3.5 px-6 md:py-5 md:px-8 rounded-full shadow-xl transform hover:-translate-y-1 transition duration-200 text-base md:text-xl flex justify-center items-center gap-2 md:gap-3 font-bold md:font-black text-center decoration-0">
+                    <a href="https://form.typeform.com/to/jb4w2mGt" target="_blank"
+                        class="w-full btn-primary py-3.5 px-6 md:py-5 md:px-8 rounded-full shadow-xl transform hover:-translate-y-1 transition duration-200 text-base md:text-xl flex justify-center items-center gap-2 md:gap-3 font-bold md:font-black text-center decoration-0">
                         <span>OBTENER ACCESO AHORA</span>
                         <i class="fa-solid fa-lock text-sm md:text-lg"></i>
                     </a>
+
+                    <div
+                        class="flex items-center justify-center gap-4 md:gap-6 mt-6 opacity-60 grayscale hover:grayscale-0 transition-all duration-300 flex-wrap">
+                        <i class="fa-brands fa-cc-visa text-3xl" style="color: #1A1F71;" title="Visa"></i>
+                        <i class="fa-brands fa-cc-paypal text-3xl" style="color: #003087;" title="PayPal"></i>
+
+                        <img src="img/zinli.jpg" alt="Zinli" class="h-6 w-auto object-contain" title="Zinli">
+                        <img src="img/zelle.png" alt="Zelle" class="h-8 w-auto object-contain" title="Zelle">
+                        <img src="img/binance.png" alt="Binance" class="h-8 w-auto object-contain" title="Binance">
+                        <img src="img/bcv.png" alt="BCV" class="h-8 w-auto object-contain" title="BCV">
+
+                        <div class="flex items-center gap-1 border border-slate-300 rounded px-2 py-1">
+                            <i class="fa-solid fa-lock text-xs"></i>
+                            <span class="text-[10px] font-bold">SSL SECURE</span>
+                        </div>
+                    </div>
 
                     <div class="text-center mt-6 text-xs text-slate-400 flex justify-center items-center gap-6">
                         <span><i class="fa-solid fa-shield-halved"></i> Pago 100% Seguro</span>
@@ -1228,7 +1447,7 @@
         </div>
     </section>
 
-     <section class="py-24 px-6 bg-white">
+    <section class="py-24 px-6 bg-white">
         <div class="max-w-3xl mx-auto">
             <h2 class="text-5xl font-black text-center mb-12">Preguntas <span
                     class="text-gradient-yellow">Frecuentes</span></h2>
@@ -1257,7 +1476,7 @@
             </div>
         </div>
     </section>
-<!-- 
+    <!-- 
     <section id="cierre" class="py-24 px-6 bg-slate-900 text-white relative overflow-hidden">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
         
@@ -1343,7 +1562,8 @@
     <footer class="text-white py-10 text-sm" style="background-color: #242424 !important;">
         <!-- Header: Logo + Slogan -->
         <div class="max-w-7xl mx-auto px-6 flex flex-col  md:flex-row mb-8 gap-6">
-            <img src="img/seo-logo-02-1.webp" alt="SEO Contenidos" class="h-20 md:h-24 w-auto object-contain self-center md:self-start">
+            <img src="img/seo-logo-02-1.webp" alt="SEO Contenidos" width="278" height="167"
+                class="h-20 md:h-24 w-auto object-contain self-center md:self-start">
             <div class="w-14"></div>
             <h3 class="text-2xl md:text-3xl text-white text-center md:text-left font-light leading-tight">
                 El futuro del marketing es ahora,<br class="hidden md:inline">
@@ -1433,26 +1653,32 @@
 
         <!-- Copyright Simple -->
         <div class="text-center text-slate-600 text-xs pt-8 border-t border-slate-800 mt-8">
-            <div class="max-w-7xl mx-auto px-6 flex flex-row md:flex-row items-center justify-center">
-                <p>&copy; 2025 SEO Contenidos. Todos los derechos reservados.</p>
-                <!-- <div class="flex gap-6">
-                    <a href="#" class="hover:text-white transition-colors">Términos y Condiciones</a>
-                    <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
-                    <a href="#" class="hover:text-white transition-colors">Cookies</a>
-                </div> -->
+            <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+
+                <p class="text-center md:text-left">&copy; 2025 SEO Contenidos. Todos los derechos reservados.</p>
+
+                <div class="flex flex-wrap gap-6 justify-center md:justify-end text-[11px] text-slate-500 font-medium">
+                    <a href="politica.html"
+                        class="hover:text-slate-300 transition-colors underline decoration-slate-700 underline-offset-2">Política
+                        de Privacidad</a>
+                    <a href="#"
+                        class="hover:text-slate-300 transition-colors underline decoration-slate-700 underline-offset-2">Términos
+                        y Condiciones</a>
+                </div>
+
             </div>
         </div>
     </footer>
 
     <!-- Botón Flotante de WhatsApp -->
-     <!--
+    <!--
     <div class="whatsapp-float">
         <a href="https://wa.me/584247086547" target="_blank" rel="noopener noreferrer"
             aria-label="Contactar por WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
     </div>-->
-
+    <script src="./js/cronometro.js"></script>
     <script src="js/main.js"></script>
     <script>
         document.querySelectorAll('details').forEach((detail) => {
@@ -1557,8 +1783,8 @@
       });
     </script>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVNJBLWV"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVNJBLWV" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 </body>
 
