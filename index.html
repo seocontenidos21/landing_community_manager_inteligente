@@ -16,7 +16,7 @@
     function gtag(){dataLayer.push(arguments);}
 
     // 2. Función que inyecta tu GTM real
-    function loadGTM() {
+    /*function loadGTM() {
         if (window.gtmLoaded) return; // Evitar doble carga
         window.gtmLoaded = true;
 
@@ -33,7 +33,13 @@
     window.addEventListener('touchstart', loadGTM, {once: true});
     
     // 4. Fallback: Si el usuario no hace nada en 3.5 segundos, carga igual
-    setTimeout(loadGTM, 3500);
+    setTimeout(loadGTM, 3500);*/
+
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NVNJBLWV');
 </script>
     <!-- End Google Tag Manager -->
     <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
@@ -516,7 +522,7 @@
     </section>
 
     <!-- -->
-    <section id="metodologia" class="py-10 md:py-24 px-6 bg-slate-50 border-y border-slate-200 overflow-hidden">
+    <section id="metodologia" class="py-10 md:py-24 px-6 bg-slate-50 border-t border-slate-200 overflow-hidden">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div class="md:w-1/2">
                 <div class="bg-white p-8 rounded-3xl -rotate-2 shadow-2xl border border-slate-100 relative group">
@@ -647,6 +653,78 @@
 
         </div>
     </section> -->
+    <section id="comunidad" class="py-10 md:py-24 px-6 bg-slate-50 border-b border-slate-200 overflow-hidden">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="font-bold text-center mb-12 md:mb-20">
+                Nuestra Comunidad <br class="block md:hidden"> 
+                <span class="text-gradient-brand">lo valida</span>
+            </h2>
+
+            <div class="flex flex-col items-center">
+                
+                <div class="flex flex-col items-center gap-6 w-full mb-10 md:hidden">
+                    <div class="w-full max-w-[380px]">
+                        <img src="https://seocontenidos.b-cdn.net/MOCKUP%20WEB3.webp" alt="Comunidad SEO Contenidos" 
+                            style="image-rendering: -webkit-optimize-contrast;"
+                            class="w-full h-auto drop-shadow-sm">
+                    </div>
+                    <a href="https://www.instagram.com/seocontenidos?igsh=a3Rqb3E4Z3Fpc3Rt" target="_blank" rel="noopener noreferrer" 
+                        class="flex items-center justify-center gap-4 px-6 py-4 bg-white border border-slate-100 rounded-2xl shadow-sm w-full max-w-[320px]">
+                        <img src="https://seocontenidos.b-cdn.net/Symbol%20IG.webp" alt="IG" class="w-4 h-4 object-contain flex-shrink-0">    
+                        <div class="text-left">
+                            <p class="text-[12px] uppercase tracking-widest text-slate-400 font-bold leading-none mb-1" style="color: #7E7E7E;">Instagram</p>
+                            <p class="text-xl font-black text-slate-700 whitespace-nowrap">@seocontenidos</p>
+                        </div>
+                    </a>
+                    <a href="https://www.tiktok.com/@seocontenidos?_r=1&_t=ZS-93QOxlkmDhs" target="_blank" rel="noopener noreferrer" 
+                        class="flex items-center justify-center gap-4 px-6 py-4 bg-white border border-slate-100 rounded-2xl shadow-sm w-full max-w-[320px]">
+                        <img src="https://seocontenidos.b-cdn.net/Symbol.svg.webp" alt="TK" class="w-4 h-4 object-contain flex-shrink-0">    
+                        <div class="text-left">
+                            <p class="text-[12px] uppercase tracking-widest text-slate-400 font-bold leading-none mb-1" style="color: #7E7E7E;">TikTok</p>
+                            <p class="text-xl font-black text-slate-700 whitespace-nowrap">@seocontenidos</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex flex-row items-center justify-center gap-8 lg:gap-12 w-full mb-10">
+                    <a href="https://www.instagram.com/seocontenidos?igsh=a3Rqb3E4Z3Fpc3Rt" target="_blank" rel="noopener noreferrer" 
+                        class="flex items-center gap-4 px-6 lg:px-10 py-4 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:scale-105 transition-all flex-shrink-0">
+                        <img src="https://seocontenidos.b-cdn.net/Symbol%20IG.webp" alt="IG" class="w-4 h-4 object-contain flex-shrink-0">    
+                        <div class="text-left">
+                            <p class="text-[11px] uppercase tracking-widest text-slate-400 font-bold leading-none mb-1" style="color: #7E7E7E;">Instagram</p>
+                            <p class="text-xl font-black text-slate-700 whitespace-nowrap">@seocontenidos</p>
+                        </div>
+                    </a>
+
+                    <div class="w-full max-w-[450px] lg:max-w-[550px] flex-shrink">
+                        <img src="https://seocontenidos.b-cdn.net/MOCKUP%20WEB3.webp" alt="Comunidad SEO Contenidos" 
+                            style="image-rendering: -webkit-optimize-contrast;"
+                            class="w-full h-auto drop-shadow-sm mx-auto">
+                    </div>
+
+                    <a href="https://www.tiktok.com/@seocontenidos?_r=1&_t=ZS-93QOxlkmDhs" target="_blank" rel="noopener noreferrer" 
+                        class="flex items-center gap-4 px-6 lg:px-10 py-4 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-md hover:scale-105 transition-all flex-shrink-0">
+                        <img src="https://seocontenidos.b-cdn.net/Symbol.svg.webp" alt="TK" class="w-4 h-4 object-contain flex-shrink-0">    
+                        <div class="text-left">
+                            <p class="text-[11px] uppercase tracking-widest text-slate-400 font-bold leading-none mb-1" style="color: #7E7E7E;">TikTok</p>
+                            <p class="text-xl font-black text-slate-700 whitespace-nowrap">@seocontenidos</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="relative">
+                    <p class="text-slate-400 font-black uppercase tracking-[0.4em] text-[20px] md:text-m mb-2" style="color: #7E7E7E;">Total Seguidores en nuestras Redes</p>
+                    <div class="flex flex-col items-center">
+                        <span class="font-black text-slate-900 leading-none tracking-tighter inline-block" 
+                            style="font-size: clamp(80px, 12vw, 120px); font-weight: 900; color: #242424;">
+                            1.78<span class="text-gradient-brand">M</span>
+                        </span>
+                        <div class="h-2 w-24 bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 rounded-full mt-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="habilidades" class="py-10 md:py-24 px-6 bg-white">
         <div class="max-w-6xl mx-auto">
             <h2 class="font-bold text-center mb-2">Habilidades Que <span class="text-gradient-red">Desarrollarás</span>
@@ -1416,8 +1494,11 @@
                         </div>
                     </div>
 
-                    <a href="https://form.typeform.com/to/jb4w2mGt" target="_blank"
-                        class="w-full btn-primary py-3.5 px-6 md:py-5 md:px-8 rounded-full shadow-xl transform hover:-translate-y-1 transition duration-200 text-base md:text-xl flex justify-center items-center gap-2 md:gap-3 font-bold md:font-black text-center decoration-0">
+                    <a href="https://form.typeform.com/to/jb4w2mGt" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="w-full btn-primary py-3.5 px-6 md:py-5 md:px-8 rounded-full shadow-xl transform hover:-translate-y-1 transition duration-200 text-base md:text-xl flex justify-center items-center gap-2 md:gap-3 font-bold md:font-black text-center decoration-0" 
+                    id="typeform">
                         <span>OBTENER ACCESO AHORA</span>
                         <i class="fa-solid fa-lock text-sm md:text-lg"></i>
                     </a>
