@@ -1804,6 +1804,7 @@
             const medium = (params.get('utm_medium') || '').toLowerCase();
             const content = (params.get('utm_content') || '').toLowerCase();
             const hasFbclid = params.has('fbclid');
+            const hasGclid  = params.has('gclid') || params.has('gbraid') || params.has('wbraid') || params.has('gad_source');
 
             let nuevoEnlace = null;
 
@@ -1819,22 +1820,28 @@
                 console.log('Atribución: Instagram Bio detectada.');
                 nuevoEnlace = destinos.bio;
             }
+
+            // CASO 3: GOOGLE / YOUTUBE ADS (gclid, gad_source, etc.)
+            else if (hasGclid || source === 'google' || source === 'youtube' || medium === 'cpc') {
+                console.log('Atribución: Google/YouTube Ads detectado.');
+                nuevoEnlace = destinos.google;
+            }
             
-            // CASO 3: META ADS (utm_medium=paid o utm_source=ig con utm_campaign/id)
+            // CASO 4: META ADS (utm_medium=paid o utm_source=ig con utm_campaign/id)
             // Se detecta por el medium "paid" como en tu ejemplo de Ads.
             else if (medium === 'paid' || source === 'facebook' || source === 'meta') {
                 console.log('Atribución: Meta Ads detectado.');
                 nuevoEnlace = destinos.meta;
             }
 
-            // CASO 4: IG STORIES (fbclid presente sin utm_medium=paid ni link_in_bio)
+            // CASO 5: IG STORIES (fbclid presente sin utm_medium=paid ni link_in_bio)
             // Como en tu segundo ejemplo, solo llega el fbclid.
             else if (hasFbclid || source === 'story' || source === 'ig_story') {
                 console.log('Atribución: Instagram Story detectada.');
                 nuevoEnlace = destinos.story;
             }
 
-            // CASO 5: TRÁFICO MASIVO O GOOGLE (Opcionales)
+            // CASO 6: TRÁFICO MASIVO O GOOGLE (Opcionales)
             else if (source === 'masivo' || source === 'email') {
                 nuevoEnlace = destinos.masivo;
             }
