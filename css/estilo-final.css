@@ -2254,6 +2254,158 @@ html body h6 {
 .btn-primary:hover::before {
   opacity: 1;
 }
+/* Botón sticky global */
+@keyframes sticky-shimmer {
+  0%        { left: -80%; }
+  60%, 100% { left: 130%; }
+}
+.sticky-cta-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background: linear-gradient(to bottom, #3b82f6, #1d4ed8);
+  border-top: 1px solid #60a5fa;
+  color: #ffffff;
+  font-family: var(--font-brand);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 0 28px 0 0;
+  border-radius: 9999px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  overflow: hidden;
+}
+.sticky-cta-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+  transform: skewX(-20deg);
+  animation: sticky-shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+.sticky-cta-btn:hover {
+  transform: translateX(-50%) translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+.sticky-cta-btn:hover .fa-chevron-right {
+  transform: translateX(3px);
+}
+/* Bloque de precios */
+.sticky-cta-prices {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.22);
+  padding: 12px 16px;
+}
+.sticky-price-row {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  line-height: 1;
+}
+.sticky-price-tag {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.75);
+}
+.sticky-cta-old {
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: line-through;
+  color: rgba(255, 255, 255, 0.42);
+}
+.sticky-cta-new {
+  font-size: 42px;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  display: flex;
+  align-items: flex-start;
+}
+.sticky-cta-currency {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #5fd3e3;
+  margin-right: 1px;
+  top: 5px;
+}
+/* Divisor */
+.sticky-cta-divider {
+  display: none;
+}
+/* Lado derecho del botón */
+.sticky-cta-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-left: 20px;
+}
+.sticky-cta-label {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1;
+}
+.sticky-cta-label .fa-chevron-right {
+  font-size: 15px;
+  color: #5fd3e3;
+  transition: transform 0.2s ease;
+}
+.sticky-cta-trust {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  line-height: 1;
+}
+.sticky-cta-trust .fa-lock {
+  font-size: 10px;
+}
+@media (max-width: 767px) {
+  .sticky-cta-btn {
+    bottom: 16px;
+    left: 50%;
+    right: auto;
+    width: auto;
+    transform: translateX(-50%);
+  }
+  .sticky-cta-btn:hover {
+    transform: translateX(-50%) translateY(-3px);
+  }
+  .sticky-cta-label {
+    font-size: 15px;
+    gap: 7px;
+  }
+  .sticky-cta-trust {
+    font-size: 10px;
+  }
+}
+
 .card-clean {
   background: white;
   border: 1px solid #E2E8F0;
