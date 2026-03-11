@@ -1865,18 +1865,23 @@
 
             // --- APLICAR CAMBIOS ---
             if (nuevoEnlace) {
+                // Enlaces CTA del cuerpo de la página
                 const enlaces = document.querySelectorAll(`a[href^="${enlaceOriginal}"]`);
-                
                 enlaces.forEach(enlace => {
-                enlace.href = nuevoEnlace;
-                // Aseguramos que se mantenga la apertura en pestaña nueva
-                enlace.setAttribute('target', '_blank');
-                enlace.setAttribute('rel', 'noopener noreferrer');
+                    enlace.href = nuevoEnlace;
+                    enlace.setAttribute('target', '_blank');
+                    enlace.setAttribute('rel', 'noopener noreferrer');
                 });
-                
-                if (enlaces.length > 0) {
-                    console.log(`Enlace actualizado: ${nuevoEnlace}`);
+
+                // Botón sticky (href base distinto, se actualiza por ID)
+                const stickyBtn = document.getElementById('sticky-cta-btn');
+                if (stickyBtn) {
+                    stickyBtn.href = nuevoEnlace;
+                    stickyBtn.setAttribute('target', '_blank');
+                    stickyBtn.setAttribute('rel', 'noopener noreferrer');
                 }
+
+                console.log(`Enlace actualizado (${enlaces.length + (stickyBtn ? 1 : 0)} botones): ${nuevoEnlace}`);
             }
 
             } catch (e) {
@@ -1885,7 +1890,7 @@
         });
     </script>
     <!-- Botón sticky global -->
-    <a href="https://wa.me/584247086547" class="sticky-cta-btn">
+    <a href="https://wa.me/584247086547/?text=¡Hola!%20¡Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!" id="sticky-cta-btn" class="sticky-cta-btn">
         <span class="sticky-cta-prices">
             <span class="sticky-price-row">
                 <span class="sticky-price-tag">Antes</span>
