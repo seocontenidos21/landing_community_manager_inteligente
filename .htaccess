@@ -1,3 +1,16 @@
+# --- INICIO REDIRECCIONES DE SEGURIDAD Y SEO ---
+RewriteEngine On
+
+# 1. Redirigir de HTTP a HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Redirigir de www a sin www (Para el subdominio)
+RewriteCond %{HTTP_HOST} ^www\.cursocm2\.seocontenidos\.net [NC]
+RewriteRule ^(.*)$ https://cursocm2.seocontenidos.net/$1 [L,R=301]
+# --- FIN REDIRECCIONES DE SEGURIDAD Y SEO ---
+
+
 # --- INICIO OPTIMIZACIÓN CACHÉ ---
 
 # 1. Activar la caché del navegador (Browser Caching)
