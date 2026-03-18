@@ -222,8 +222,7 @@
             </div>
 
             <p class="text-xl text-slate-600 mb-10 max-w-3xl mx-auto font-light leading-relaxed">
-                Usa la <span>Inteligencia Artificial</span> para volver tu conocimiento de Redes Sociales un trabajo de
-                <span>$500 a $1,500 USD al mes.</span>
+                Domina la Inteligencia Artificial aplicada a Redes Sociales y lleva tu perfil como Community Manager a un nivel más profesional y estratégico.
             </p>
 
             <div
@@ -1670,7 +1669,7 @@
                     </li>
                     <li>
                         <span class="block text-slate-500 text-xs uppercase mb-1 font-bold">Whatsapp:</span>
-                        <a href="https://wa.me/584147408468" target="_blank"
+                        <a href="https://api.whatsapp.com/send?phone=584147408468" target="_blank"
                             class="hover:text-slate-300 transition-colors">+58 414-7408468</a>
                     </li>
                 </ul>
@@ -1756,7 +1755,7 @@
     <!-- Botón Flotante de WhatsApp -->
     <!--
     <div class="whatsapp-float">
-        <a href="https://wa.me/584147408468" target="_blank" rel="noopener noreferrer"
+        <a href="https://api.whatsapp.com/send?phone=584147408468" target="_blank" rel="noopener noreferrer"
             aria-label="Contactar por WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
@@ -1786,7 +1785,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // 1. Enlace base (default para tráfico sin atribución)
-            const enlaceOriginal = 'https://wa.me/584147408468/?text=¡Hola!%20¡Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!';
+            const enlaceOriginal = 'https://api.whatsapp.com/send?phone=584147408468&text=¡Hola!%20¡Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!';
 
             // 2. Destinos según fuente
             // Meta Ads          → 🚀  (%F0%9F%9A%80)
@@ -1795,14 +1794,14 @@
             // Experimentación   → 💡  (%F0%9F%92%A1)  detección: utm_campaign contiene "experiment"
             // TikTok / Masivo   → Typeform (sin cambio)
             const destinos = {
-                bio:             'https://wa.me/584147408468/?text=¡Hola!%20¡Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!',
+                bio:             'https://api.whatsapp.com/send?phone=584147408468&text=¡Hola!%20¡Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!',
                 bio_tt:          'https://form.typeform.com/to/jb4w2mGt#fuente=tiktok_bio',
                 story:           'https://form.typeform.com/to/jb4w2mGt#fuente=ig_story',
-                meta:            'https://wa.me/584147408468/?text=Hola!%20%C2%A1Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!%20%F0%9F%9A%80',
-                remarketing:     'https://wa.me/584147408468/?text=Hola!%20%C2%A1Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!%20%F0%9F%8E%AF',
-                experimentacion: 'https://wa.me/584147408468/?text=Hola!%20%C2%A1Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!%20%F0%9F%92%A1',
+                meta:            'https://api.whatsapp.com/send?phone=584147408468&text=Hola!%20%C2%A1Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!%20%F0%9F%9A%80',
+                remarketing:     'https://api.whatsapp.com/send?phone=584147408468&text=Hola!%20%C2%A1Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!%20%F0%9F%8E%AF',
+                experimentacion: 'https://api.whatsapp.com/send?phone=584147408468&text=Hola!%20%C2%A1Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!%20%F0%9F%92%A1',
                 masivo:          'https://form.typeform.com/to/jb4w2mGt#fuente=masivo',
-                google:          'https://wa.me/584147408468/?text=Hola!%20%C2%A1Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!%20%E2%AD%90'
+                google:          'https://api.whatsapp.com/send?phone=584147408468&text=Hola!%20%C2%A1Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!%20%E2%AD%90'
             };
 
             try {
@@ -1874,6 +1873,14 @@
                     enlace.setAttribute('rel', 'noopener noreferrer');
                 });
 
+                // Botón CTA principal en la sección #oferta (href base distinto, se actualiza por ID)
+                const ctaBtn = document.getElementById('typeform');
+                if (ctaBtn) {
+                    ctaBtn.href = nuevoEnlace;
+                    ctaBtn.setAttribute('target', '_blank');
+                    ctaBtn.setAttribute('rel', 'noopener noreferrer');
+                }
+
                 // Botón sticky (href base distinto, se actualiza por ID)
                 const stickyBtn = document.getElementById('sticky-cta-btn');
                 if (stickyBtn) {
@@ -1882,7 +1889,7 @@
                     stickyBtn.setAttribute('rel', 'noopener noreferrer');
                 }
 
-                console.log(`Enlace actualizado (${enlaces.length + (stickyBtn ? 1 : 0)} botones): ${nuevoEnlace}`);
+                console.log(`Enlace actualizado (${enlaces.length + (ctaBtn ? 1 : 0) + (stickyBtn ? 1 : 0)} botones): ${nuevoEnlace}`);
             }
 
             } catch (e) {
@@ -1891,7 +1898,7 @@
         });
     </script>
     <!-- Botón sticky global -->
-    <a href="https://wa.me/584147408468/?text=¡Hola!%20¡Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!" id="sticky-cta-btn" class="sticky-cta-btn" target="_blank" rel="noopener noreferrer">
+    <a href="https://api.whatsapp.com/send?phone=584147408468&text=¡Hola!%20¡Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!" id="sticky-cta-btn" class="sticky-cta-btn" target="_blank" rel="noopener noreferrer">
         <span class="sticky-cta-prices">
             <span class="sticky-price-row">
                 <span class="sticky-price-tag">Antes</span>
