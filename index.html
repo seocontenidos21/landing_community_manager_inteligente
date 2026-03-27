@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curso Community Manager Inteligente - SEO Contenidos</title>
+    
     <meta name="description"
         content="Aprende a ser Community Manager Inteligente: usa la Inteligencia Artificial para potenciar marcas y multiplicar ventas.">
     <link rel="canonical" href="https://cursocm.seocontenidos.net/" />
@@ -1789,7 +1790,8 @@
 
             // 2. Destinos según fuente
             // Meta Ads          → 🚀  (%F0%9F%9A%80)
-            // Google/YouTube    → ⭐  (%E2%AD%90)
+            // Google Ads        → ⭐  (%E2%AD%90)
+            // YouTube           → 📺  (%F0%9F%93%BA)  detección: utm_campaign contiene "youtube" o utm_source=youtube
             // Remarketing Meta  → 🎯  (%F0%9F%8E%AF)  detección: utm_campaign contiene "remarketing"
             // Experimentación   → 💡  (%F0%9F%92%A1)  detección: utm_campaign contiene "experiment"
             // TikTok / Masivo   → Typeform (sin cambio)
@@ -1801,7 +1803,8 @@
                 remarketing:     'https://api.whatsapp.com/send?phone=584147408468&text=Hola!%20%C2%A1Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!%20%F0%9F%8E%AF',
                 experimentacion: 'https://api.whatsapp.com/send?phone=584147408468&text=Hola!%20%C2%A1Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!%20%F0%9F%92%A1',
                 masivo:          'https://form.typeform.com/to/jb4w2mGt#fuente=masivo',
-                google:          'https://api.whatsapp.com/send?phone=584147408468&text=Hola!%20%C2%A1Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!%20%E2%AD%90'
+                google:          'https://api.whatsapp.com/send?phone=584147408468&text=Hola!%20%C2%A1Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!%20%E2%AD%90',
+                youtube:         'https://api.whatsapp.com/send?phone=584147408468&text=Hola!%20Vi%20el%20video%20del%20curso%20y%20quiero%20empezar%20hoy.%20%C2%BFC%C3%B3mo%20pago%3F'
             };
 
             try {
@@ -1828,9 +1831,15 @@
                 nuevoEnlace = destinos.bio;
             }
 
-            // CASO 3: GOOGLE / YOUTUBE ADS (gclid, gad_source, etc.)
-            else if (hasGclid || source === 'google' || source === 'youtube' || medium === 'cpc') {
-                console.log('Atribución: Google/YouTube Ads detectado.');
+            // CASO 3a: YOUTUBE (utm_campaign contiene "youtube" o utm_source=youtube)
+            else if (source === 'youtube' || campaign.includes('youtube')) {
+                console.log('Atribución: YouTube detectado.');
+                nuevoEnlace = destinos.youtube;
+            }
+
+            // CASO 3b: GOOGLE ADS (gclid, gad_source, etc.)
+            else if (hasGclid || source === 'google' || medium === 'cpc') {
+                console.log('Atribución: Google Ads detectado.');
                 nuevoEnlace = destinos.google;
             }
 
