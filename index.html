@@ -43,6 +43,75 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NVNJBLWV');
 </script>
+    <!-- CM Tracking: captura identificadores publicitarios al llegar a la landing -->
+    <script>
+    (function () {
+        var TRACK_ENDPOINT = 'https://creative-quietude-production.up.railway.app/api/track-click';
+
+        // Persiste parámetros publicitarios de la URL en localStorage
+        try {
+            var params = new URLSearchParams(window.location.search);
+            var CM_KEYS = ['fbclid','gclid','wbraid','gbraid','gad_source',
+                           'utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+            CM_KEYS.forEach(function (k) {
+                var v = params.get(k);
+                if (v) localStorage.setItem('cm_' + k, v);
+            });
+
+            // Genera cookie _fbc si llega fbclid (formato requerido por Meta CAPI)
+            var fbclid = params.get('fbclid');
+            if (fbclid) {
+                var fbc = 'fb.1.' + Date.now() + '.' + fbclid;
+                var exp = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toUTCString();
+                document.cookie = '_fbc=' + fbc + '; expires=' + exp +
+                    '; path=/; domain=.seocontenidos.net; SameSite=Lax';
+                localStorage.setItem('cm_fbc', fbc);
+            }
+
+            // Lee _fbp después de 300ms (el Pixel de Meta necesita tiempo para setearlo)
+            setTimeout(function () {
+                var all = document.cookie.split(';');
+                for (var i = 0; i < all.length; i++) {
+                    var c = all[i].trim();
+                    if (c.indexOf('_fbp=') === 0) {
+                        localStorage.setItem('cm_fbp', c.substring(5));
+                        break;
+                    }
+                }
+            }, 300);
+
+            // Contexto de la visita
+            localStorage.setItem('cm_landing_url', window.location.href);
+            localStorage.setItem('cm_landing_ts',  String(Date.now()));
+            localStorage.setItem('cm_referrer',     document.referrer || '');
+        } catch (e) {}
+
+        // Retorna todos los datos de tracking actuales
+        window.getCMTrackingData = function () {
+            return {
+                fbclid:       localStorage.getItem('cm_fbclid'),
+                fbc:          localStorage.getItem('cm_fbc'),
+                fbp:          localStorage.getItem('cm_fbp'),
+                gclid:        localStorage.getItem('cm_gclid'),
+                wbraid:       localStorage.getItem('cm_wbraid'),
+                gbraid:       localStorage.getItem('cm_gbraid'),
+                gad_source:   localStorage.getItem('cm_gad_source'),
+                utm_source:   localStorage.getItem('cm_utm_source'),
+                utm_medium:   localStorage.getItem('cm_utm_medium'),
+                utm_campaign: localStorage.getItem('cm_utm_campaign'),
+                utm_content:  localStorage.getItem('cm_utm_content'),
+                utm_term:     localStorage.getItem('cm_utm_term'),
+                landing_url:  localStorage.getItem('cm_landing_url'),
+                landing_ts:   localStorage.getItem('cm_landing_ts'),
+                referrer:     localStorage.getItem('cm_referrer'),
+                user_agent:   navigator.userAgent,
+                page_url:     window.location.href
+            };
+        };
+
+        window._CM_TRACK_ENDPOINT = TRACK_ENDPOINT;
+    })();
+    </script>
     <!-- End Google Tag Manager -->
     <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
@@ -1804,7 +1873,8 @@
                 experimentacion: 'https://api.whatsapp.com/send?phone=584147408468&text=Hola!%20%C2%A1Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!%20%F0%9F%92%A1',
                 masivo:          'https://form.typeform.com/to/jb4w2mGt#fuente=masivo',
                 google:          'https://api.whatsapp.com/send?phone=584147408468&text=Hola!%20%C2%A1Quiero%20comprar%20el%20curso%20de%20Community%20Manager%20Inteligente!%20%E2%AD%90',
-                youtube:         'https://api.whatsapp.com/send?phone=584147408468&text=Hola!%20Vi%20el%20video%20del%20curso%20y%20quiero%20empezar%20hoy.%20%C2%BFC%C3%B3mo%20pago%3F'
+                youtube:         'https://api.whatsapp.com/send?phone=584147408468&text=Hola!%20Vi%20el%20video%20del%20curso%20y%20quiero%20empezar%20hoy.%20%C2%BFC%C3%B3mo%20pago%3F',
+                ig_reels:        'https://api.whatsapp.com/send?phone=584147408468&text=Hola%2C%20quiero%20comprar%20el%20Curso%20Community%20Manager%20Inteligente.%20Me%20das%20informaci%C3%B3n%20sobre%20los%20m%C3%A9todos%20de%20pago%20%F0%9F%91%8B'
             };
 
             try {
@@ -1837,7 +1907,13 @@
                 nuevoEnlace = destinos.youtube;
             }
 
-            // CASO 3b: GOOGLE ADS (gclid, gad_source, etc.)
+            // CASO 3b: IG REELS (utm_source=video, utm_medium=social, utm_content contiene "video_ia_reels")
+            else if (source === 'video' && medium === 'social' && content.includes('video_ia_reels')) {
+                console.log('Atribución: IG Reels detectado.');
+                nuevoEnlace = destinos.ig_reels;
+            }
+
+            // CASO 3c: GOOGLE ADS (gclid, gad_source, etc.)
             else if (hasGclid || source === 'google' || medium === 'cpc') {
                 console.log('Atribución: Google Ads detectado.');
                 nuevoEnlace = destinos.google;
@@ -1904,6 +1980,48 @@
             } catch (e) {
             console.error('Error en atribución:', e);
             }
+
+            // --- TRACKING: interceptar clicks en botones de WhatsApp para insertar CMI-XXXXXX ---
+            function _cmAppendRef(waUrl, refId) {
+                try {
+                    var u = new URL(waUrl);
+                    var t = u.searchParams.get('text') || '';
+                    u.searchParams.set('text', t + ' | Código de bienvenida: CMI-' + refId.toUpperCase());
+                    return u.toString();
+                } catch (ex) { return waUrl; }
+            }
+
+            function _cmAddInterceptor(el) {
+                if (!el || !el.href || el.href.indexOf('typeform.com') !== -1) return;
+                if (el.dataset.cmTracked) return; // evitar doble binding
+                el.dataset.cmTracked = '1';
+                el.addEventListener('click', async function (evt) {
+                    evt.preventDefault();
+                    var baseUrl = this.href;
+                    var finalUrl = baseUrl;
+                    try {
+                        var ctrl = new AbortController();
+                        var tid  = setTimeout(function () { ctrl.abort(); }, 1500);
+                        var resp = await fetch(window._CM_TRACK_ENDPOINT, {
+                            method:  'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body:    JSON.stringify(window.getCMTrackingData ? window.getCMTrackingData() : {}),
+                            signal:  ctrl.signal
+                        });
+                        clearTimeout(tid);
+                        if (resp.ok) {
+                            var data = await resp.json();
+                            if (data && data.ref_id) finalUrl = _cmAppendRef(baseUrl, data.ref_id);
+                        }
+                    } catch (ex) { /* timeout o error de red — WhatsApp se abre igual sin CMI */ }
+                    window.open(finalUrl, '_blank');
+                });
+            }
+
+            // Aplicar a todos los botones de WhatsApp de la página (los de Typeform son ignorados por _cmAddInterceptor)
+            document.querySelectorAll('a[href*="whatsapp.com"]').forEach(_cmAddInterceptor);
+            _cmAddInterceptor(document.getElementById('typeform'));
+            _cmAddInterceptor(document.getElementById('sticky-cta-btn'));
         });
     </script>
     <!-- Botón sticky global -->
