@@ -1880,10 +1880,11 @@
             try {
             const params = new URLSearchParams(window.location.search);
 
-            const source   = (params.get('utm_source')   || '').toLowerCase();
-            const medium   = (params.get('utm_medium')   || '').toLowerCase();
-            const content  = (params.get('utm_content')  || '').toLowerCase();
-            const campaign = (params.get('utm_campaign') || '').toLowerCase();
+            const source    = (params.get('utm_source')   || '').toLowerCase();
+            const medium    = (params.get('utm_medium')   || '').toLowerCase();
+            const content   = (params.get('utm_content')  || '').toLowerCase();
+            const campaign  = (params.get('utm_campaign') || '').toLowerCase();
+            const gadSource = (params.get('gad_source')   || '').toLowerCase();
             const hasFbclid = params.has('fbclid');
             const hasGclid  = params.has('gclid') || params.has('gbraid') || params.has('wbraid') || params.has('gad_source');
 
@@ -1901,8 +1902,8 @@
                 nuevoEnlace = destinos.bio;
             }
 
-            // CASO 3a: YOUTUBE (utm_campaign contiene "youtube" o utm_source=youtube)
-            else if (source === 'youtube' || campaign.includes('youtube')) {
+            // CASO 3a: YOUTUBE (utm_source=youtube, campaign con "youtube", o gad_source=2 que es YouTube en Google Ads)
+            else if (source === 'youtube' || campaign.includes('youtube') || gadSource === '2') {
                 console.log('Atribución: YouTube detectado.');
                 nuevoEnlace = destinos.youtube;
             }
