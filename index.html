@@ -1927,7 +1927,9 @@
             // utm_campaign={{campaign.id}}, utm_content={{ad.name}}, utm_term={{adset.name}}.
             // Va antes de los casos "paid" porque su medium es 'paid_social' (no 'paid') y el
             // campaign es un id numérico, así que no caería en remarketing/experimentación/genérico.
-            else if (medium === 'paid_social') {
+            // BLINDAJE: si Meta no pasa utm_medium, igual la reconocemos por utm_source, que
+            // {{site_source_name}} resuelve a uno de estos valores que SOLO inyectan los anuncios.
+            else if (medium === 'paid_social' || ['fb', 'ig', 'an', 'msg'].includes(source)) {
                 console.log('Atribución: Paid Social Meta detectada.');
                 nuevoEnlace = destinos.paid_social;
             }
